@@ -1,0 +1,43 @@
+body, html, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+    height: auto;
+}
+
+p, a, h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.grid-container {
+	max-width: 1400px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+
+}
+
+@media screen and (max-width: 767px) {
+
+
+}
+
+@media screen and (max-width: 400px) {
+
+
+}
