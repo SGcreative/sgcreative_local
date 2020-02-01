@@ -303,23 +303,23 @@ $(document).ready(function() {
             searchBox.toggleClass("open");
             searchBox.slideToggle();
             if (searchBox.hasClass("open")) {
-                $('#SearchValue').focus();
+                $('#search-bar input[type="text"]').focus();
             }
         });
     }
 });
 
-// START SHOPPING SCROLL DOWN --
-$('#scroll-down a').click(function() {
-    $('html, body').animate({ scrollTop: $('#browse-rooms').offset().top }, 800);
-});
-
 $(document).ready(function() {
 
+    // START SHOPPING SCROLL DOWN --
+    $('#scroll-down a').click(function() {
+        $('html, body').animate({ scrollTop: $('#browse-rooms').offset().top }, 800);
+    });
+
     // FOOTER SOCIAL ICONS BACKGROUND (not homepage) --
-    if (window.location.pathname != '/') {
-        $('.footer-social').css('background-color', '#fff');
-    }
+    // if (window.location.pathname != '/') {
+    //     $('.footer-social').css('background-color', '#fff');
+    // }
 
     // BRANDS LIST EXPANSION BASED ON COUNT --
     var totalItems = $('.footer-column ul li').length;

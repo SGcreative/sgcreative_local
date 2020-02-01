@@ -18,6 +18,36 @@ Scroll to Top --- rgba(36, 154, 172, .75)
 
 /*** GLOBAL **********************************************************/
 
+*:focus {
+    outline: none;
+}
+
+input:not([type="radio"]):not([type="checkbox"]) {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+    border: 0;
+}
+
+header,
+nav,
+footer {
+    -webkit-transition: all .3s ease .15s;
+    -moz-transition: all .3s ease .15s;
+    -o-transition: all .3s ease .15s;
+    -ms-transition: all .3s ease .15s;
+    transition: all .3s ease .15s;
+}
+
 .hidden {
     position: absolute;
     left: -10000px;
@@ -40,7 +70,7 @@ Scroll to Top --- rgba(36, 154, 172, .75)
 main {
     max-width: 1420px;
     margin: 0 auto;
-    padding: 160px 10px 20px 10px;
+    padding: 0 10px;
 }
 
 .grid-container {
@@ -49,44 +79,6 @@ main {
     max-width: 1400px;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-.HomePageForm #divworkspacearea {
-    max-width: 100%;
-    padding: 0;
-    background-color: #efefef;
-}
-
-.ItemBrowserPageContainer,
-.ItemInformationContainer {
-    padding: 0 10px;
-}
-
-.LoginPageContainer {
-    margin: 5vh auto;
-}
-
-header,
-nav,
-footer {
-    -webkit-transition: all .3s ease .15s;
-    -moz-transition: all .3s ease .15s;
-    -o-transition: all .3s ease .15s;
-    -ms-transition: all .3s ease .15s;
-    transition: all .3s ease .15s;
-}
-
-*:focus {
-    outline: none;
-}
-
-img {
-    border: 0;
-}
-
-h1, h2, p, ul {
-    margin: 0;
-    padding: 0;
 }
 
 body,
@@ -408,13 +400,11 @@ nav li li li a:hover {
 
 .slideout-menu .slideout-menu-toggle {
     position: absolute;
-    top: 12px;
+    top: 5px;
     right: 10px;
     display: inline-block;
-    padding: 3px 9px 6px;
+    padding: 10px;
     border-radius: 3px;
-    font-size: 1.2em;
-    font-weight: bold;
     text-decoration: none;
     line-height: 1;
     background-color: #222;
@@ -484,51 +474,18 @@ nav li li li a:hover {
     position: absolute;
     right: 0;
     width: 30%;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .75);
     padding: 10px 0 10px 10px;
     display: none;
     z-index: 1;
 }
 
-#search-left {
-    width: 70%;
+#search-bar input,
+.email-field input {
+    box-sizing: border-box;
     float: left;
-}
-
-#search-left input {
-    width: 97%;
-    height: 28px;
-    line-height: 28px;
-    background-color: #ebebeb;
+    height: 40px;
     font-size: 16px;
-    color: #222;
-    padding: 5px;
-    border: 2px solid #ebebeb;
-}
-
-#search-left input::-webkit-input-placeholder,
-#search-left input::-moz-placeholder,
-#search-left input:-ms-input-placeholder,
-#search-left input:-moz-placeholder {
-    color: #606060;
-}
-
-#search-right {
-    width: 20%;
-    float: left;
-}
-
-#search-right input {
-    width: 100%;
-    height: 42px;
-    line-height: 42px;
-    background-color: #249aac;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #fff;
-    border: 1px solid #249aac;
-    cursor: pointer;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -o-transition: all .3s ease;
@@ -536,9 +493,58 @@ nav li li li a:hover {
     transition: all .3s ease;
 }
 
-#search-right input:hover {
+#search-bar input[type="text"],
+.email-field input[type="text"] {
+    padding: 5px;
+    color: #222;
+}
+
+#search-bar input[type="text"] {
+    width: 70%;
+    padding: 5px;
+    background-color: #ebebeb;
+    border: 2px solid #ebebeb;
+}
+
+#search-bar input[type="text"]:focus,
+.email-field input[type="text"]:focus {
+    background-color: #fff;
+    border-color: #249aac;
+}
+
+#search-bar input[type="text"]::-webkit-input-placeholder {
+    color: #888;
+}
+
+#search-bar input[type="text"]::-moz-placeholder {
+    color: #888;
+}
+
+#search-bar input[type="text"]:-ms-input-placeholder {
+    color: #888;
+}
+
+#search-bar input[type="text"]:-moz-placeholder {
+    color: #888;
+}
+
+#search-bar input[type="submit"],
+.email-field input[type="submit"] {
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#search-bar input[type="submit"] {
+    width: 20%;
+    background-color: #249aac;
+}
+
+#search-bar input[type="submit"]:hover,
+#search-bar input[type="submit"]:focus {
     background-color: #50CADD;
-    border: 1px solid #50CADD;
 }
 
 #search-close a {
@@ -564,6 +570,7 @@ nav li li li a:hover {
     position: absolute;
     bottom: 3%;
     left: 50%;
+    z-index: 1;
     transform: translateX(-50%);
 }
 
@@ -577,7 +584,6 @@ nav li li li a:hover {
     -o-transition: color .3s ease;
     -ms-transition: color .3s ease;
     transition: color .3s ease;
-    ;
 }
 
 #scroll-down a:hover {
@@ -655,18 +661,13 @@ nav li li li a:hover {
 .banner-heading>h2 {
     padding: 10px;
     font-size: 1.35em;
-    font-weight: normal;
+    font-weight: 400;
     text-transform: uppercase;
     color: #fff;
 }
 
 .banner-img {
     position: relative;
-}
-
-.banner-img img {
-    width: 100%;
-    height: auto;
 }
 
 .banner-img::after {
@@ -791,30 +792,36 @@ nav li li li a:hover {
     margin-bottom: 20px;
 }
 
-.email-field input {
-    width: 320px;
-    height: 40px;
-    padding: 0 5px;
+.email-field input[type="text"] {
+    width: 35%;
+    margin-left: 25%;
+    background-color: #fff;
     border: 2px solid #222;
-    border-right: none;
-    font-size: 1.15em;
 }
 
-.email-field .submit-button {
-    width: 180px;
-    height: 44px;
-    margin-left: -5px;
-    border: 0;
+.email-field input[type="text"]::-webkit-input-placeholder {
+    color: #888;
+}
+
+.email-field input[type="text"]::-moz-placeholder {
+    color: #888;
+}
+
+.email-field input[type="text"]:-ms-input-placeholder {
+    color: #888;
+}
+
+.email-field input[type="text"]:-moz-placeholder {
+    color: #888;
+}
+
+.email-field input[type="submit"] {
+    width: 15%;
     background-color: #222;
-    color: #fff;
-    text-transform: uppercase;
-    cursor: pointer;
-    -moz-transition: background-color .2s ease-in-out;
-    -webkit-transition: background-color .2s ease-in-out;
-    transition: background-color .2s ease-in-out;
 }
 
-.email-field .submit-button:hover {
+.email-field input[type="submit"]:hover,
+.email-field input[type="submit"]:focus {
     background-color: #005f6e;
 }
 
@@ -917,7 +924,6 @@ footer a:hover {
 
 #scrolldiv a {
     font-size: 14px;
-    font-weight: normal;
 }
 
 .scrolltotop {
@@ -1025,6 +1031,15 @@ footer a:hover {
         background-color: rgba(0, 0, 0, .65);
     }
 
+    .email-field input[type="text"] {
+        width: 50%;
+        margin-left: 15%;
+    }
+
+    .email-field input[type="submit"] {
+        width: 20%;
+    }
+
     #scrolldiv {
         display: none;
     }
@@ -1083,12 +1098,12 @@ footer a:hover {
         background-color: #247B87;
     }
 
-    .email-field input {
+    .email-field input[type="text"] {
         width: 60%;
-        font-size: 1em;
+        margin-left: 5%;
     }
 
-    .email-field .submit-button {
+    .email-field input[type="submit"] {
         width: 30%;
     }
 
@@ -1122,5 +1137,14 @@ footer a:hover {
 
     #newsletterbox {
         padding: 45px 10px 25px;
+    }
+
+    .email-field input[type="text"] {
+        width: 65%;
+        margin-left: 0;
+    }
+
+    .email-field input[type="submit"] {
+        width: 35%;
     }
 }

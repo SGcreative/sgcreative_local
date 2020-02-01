@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Page_Title</title>
+    <title>Charlotte Theme</title>
+    <script src="../packages/jquery-3.3.1.min.js"></script>
+	<script src="../packages/owl.carousel.min.js"></script>
+	<script src="../packages/jquery.magnific-popup.min.js"></script>
+	<script src="charlotte.js"></script>
     <link rel="stylesheet" href="../packages/unsematnic-grid.css" />
     <link rel="stylesheet" href="../packages/owl.carousel.min.css">
 	<link rel="stylesheet" href="../packages/owl.theme.default.min.css">
 	<link rel="stylesheet" href="../packages/magnific-popup.css" />
     <link rel="stylesheet" href="charlotte.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Song+Myung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung&display=swap" rel="stylesheet">
 </head>
 
 <body id="home-page">
@@ -29,7 +35,7 @@
 						<li><a href="#" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i><span class="hidden">Instagram</span></a></li>
 						<li><a href="#" target="_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i><span class="hidden">Twitter</span></a></li>
 						<li><a href="#" target="_blank"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i><span class="hidden">Pinterest</span></a></li>
-						<li><a href="/contact-us.inc"><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 888.888.8888</a></li>
+						<li><a href="/contact-us.inc"><i class="fa fa-phone fa-lg" aria-hidden="true"></i> 800.555.1234</a></li>
 					</ul>
 					<div class="hide-on-tablet hide-on-desktop">
 						<a class="slideout-menu-toggle" href="javascript:void(0)"><i class="fa fa-bars fa-lg" aria-hidden="true"></i><span class="hidden">Menu</span></a>
@@ -50,7 +56,7 @@
 							<a href="javascript:void(0)" class="opensearch"><i class="fa fa-search fa-lg" aria-hidden="true"></i><span class="hidden">Search</span></a>
 						</li>
 						<li class="hide-on-mobile">
-							<a href="/viewcart.aspx" rel="noindex,nofollow"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i><span class="hidden">Cart</span> (<viewCartQuantitySummary></viewCartQuantitySummary>)</a>
+							<a href="/viewcart.aspx" rel="noindex,nofollow"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i><span class="hidden">Cart</span> (0)</a>
 						</li>
 						<li class="hide-on-mobile">
 							<a style="border: 0" href="javascript:void(0)"><i class="fa fa-user-o fa-lg" aria-hidden="true"></i><span class="hidden">Account</span></a>
@@ -75,31 +81,88 @@
 					<li><a href="javascript:void(0)">Shop</a>
 						<ul id="room-submenu">
 							<li><a href="/living-room.inc">Living Room <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-								<AttributeList id="LivingRoom" class="shopbycolor" ListAttribute="Type" FilterAttribute="Room"  FilterAttributeValue="Living Room" ItemType="item"></AttributeList>
+								<ul>
+									<li><a href="#">Sofas</a></li>
+									<li><a href="#">Sectionals</a></li>
+									<li><a href="#">Recliners</a></li>
+									<li><a href="#">Chairs</a></li>
+									<li><a href="#">Loveseats</a></li>
+									<li><a href="#">Chaises</a></li>
+									<li><a href="#">Settees</a></li>
+									<li><a href="#">Benches</a></li>
+									<li><a href="#">Ottomans</a></li>
+									<li><a href="#">Coffee Tables</a></li>
+									<li><a href="#">End Tables</a></li>
+									<li><a href="#">Cabinets</a></li>
+									<li><a href="#">Consoles</a></li>
+									<li><a href="#">Bookcases</a></li>
+									<li><a href="#">Fireplaces</a></li>
+								</ul>
 							</li>
 							<li><a href="/dining-room.inc">Dining Room <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-								<AttributeList id="DiningRoom" class="shopbycolor" ListAttribute="Type" FilterAttribute="Room"  FilterAttributeValue="Dining Room" ItemType="item"></AttributeList>
+								<ul>
+									<li><a href="#">Dining Sets</a></li>
+									<li><a href="#">Formal Sets</a></li>
+									<li><a href="#">Bistro Sets</a></li>
+									<li><a href="#">Tables</a></li>
+									<li><a href="#">Chairs</a></li>
+									<li><a href="#">Benches</a></li>
+									<li><a href="#">Bar Stools</a></li>
+									<li><a href="#">Cabinets &amp; Hutches</a></li>
+									<li><a href="#">Buffets</a></li>
+								</ul>
 							</li>
 							<li><a href="/bedroom.inc">Bedroom <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-								<AttributeList id="Bedroom" class="shopbycolor" ListAttribute="Type" FilterAttribute="Room" FilterAttributeValue="Bedroom" ItemType="item"></AttributeList>
+								<ul>
+									<li><a href="#">Master Bedroom Sets</a></li>
+									<li><a href="#">Youth Bedroom Sets</a></li>
+									<li><a href="#">Beds</a></li>
+									<li><a href="#">Nightstands</a></li>
+									<li><a href="#">Dressers</a></li>
+									<li><a href="#">Wardrobes</a></li>
+									<li><a href="#">Trunks &amp; Chests</a></li>
+									<li><a href="#">Bedding</a></li>
+									<li><a href="#">Mattresses</a></li>
+								</ul>
 							</li>
 							<li><a href="/home-office.inc">Home Office <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-								<AttributeList id="HomeOffice" class="shopbycolor" ListAttribute="Type" FilterAttribute="Department" FilterAttributeValue="Home Office" ItemType="item"></AttributeList>
+								<ul>
+									<li><a href="#">Desks</a></li>
+									<li><a href="#">Chairs</a></li>
+									<li><a href="#">Tables</a></li>
+									<li><a href="#">File Cabinets</a></li>
+									<li><a href="#">Bookcases</a></li>
+								</ul>
 							</li>
 							<li><a href="/entertainment.inc">Entertainment <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-								<AttributeList id="HomeEntertainment" class="shopbycolor" ListAttribute="Type" FilterAttribute="Department" FilterAttributeValue="Home Entertainment" ItemType="item"></AttributeList>
+								<ul>
+									<li><a href="#">Entertainment Centers</a></li>
+									<li><a href="#">TV Stands</a></li>
+									<li><a href="#">A/V Cabinets</a></li>
+									<li><a href="#">Media Cabinets</a></li>
+									<li><a href="#">Home Theater Seating</a></li>
+								</ul>
 							</li>
 							<li><a href="/accessories.inc">Accessories <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-								<AttributeList id="Accessories" class="shopbycolor" ListAttribute="Type" FilterAttribute="Department" FilterAttributeValue="Accessories" ItemType="item"></AttributeList>
+								<ul>
+									<li><a href="#">Accent Chairs</a></li>
+									<li><a href="#">Accent Tables</a></li>
+									<li><a href="#">Lamps</a></li>
+									<li><a href="#">Mirrors</a></li>
+									<li><a href="#">Clocks</a></li>
+									<li><a href="#">Wall Art</a></li>
+									<li><a href="#">Accent Pieces</a></li>
+									<li><a href="#">Fireplaces</a></li>
+								</ul>
 							</li>
 							<li><a href="/mattresses/">Mattresses</a></li>
 						</ul>
 					</li>
 					<li><a href="javascript:void(0)">Design</a>
 						<ul>
-							<li><a href="/design-center.inc">Design Center</a></li>
-							<li><a href="/room-planner.inc">Room Planner</a></li>
-							<li><a href="javascript:void(0)">Find a Designer</a></li>
+							<li><a href="#">Custom Furniture</a></li>
+							<li><a href="#">Find a Designer</a></li>
+							<li><a href="#">Room Planner</a></li>
 						</ul>
 					</li>
 					<li><a href="javascript:void(0)">Learn</a>
@@ -127,95 +190,113 @@
 				<div class="clear"></div>
 			</nav>
 			<div id="search-bar">
-				<div id="searchbox">
-					<div id="search-left">
-						<div id="loggedinas" style="display: none; visibility: hidden"></div>
-						<label class="hidden" for="SearchValue">Search Keyword</label>
-						<input type="text" id="SearchValue" name="SearchValue" onkeypress="submitsearch(event);" value="" />
-					</div>
-					<div id="search-right">
-						<label class="hidden" for="searchbutton">Search</label>
-						<input onClick="goSearch();" name="searchbutton" id="searchbutton" type="Submit" value="Go" />
-					</div>
-					<div id="search-close">
-						<a href="javascript:void(0)" class="opensearch"><i class="fa fa-times" aria-hidden="true"></i><span class="hidden">Close Search</span></a>
-					</div>
-					<div class="clear"></div>
+				<label class="hidden" for="SearchValue">Search Keyword</label>
+				<input type="text" name="Search_Value" placeholder="Search.." value="" />
+				<label class="hidden" for="searchbutton">Search</label>
+				<input name="Search_Button" type="Submit" value="Go" />
+				<div id="search-close">
+					<a href="javascript:void(0)" class="opensearch"><i class="fa fa-times" aria-hidden="true"></i><span class="hidden">Close Search</span></a>
 				</div>
 			</div>
 		</div>
 
 	</div>
-</header>
 
-<div class="slideout-menu">
-	<div>
-		<p>Menu</p>
-		<p><a href="tel:+1-888-888-8888"><i class="fa fa-phone fa-lg" aria-hidden="true"></i><span class="hidden">Phone</span></a></p>
-		<p><a href="https://www.google.com/maps" target="_blank"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i><span class="hidden">Location</span></a></p>
-		<span class="slideout-menu-toggle">x</span>
+	<div class="slideout-menu">
+		<div>
+			<p>Menu</p>
+			<p><a href="tel:+1-800-555-1234"><i class="fa fa-phone fa-lg" aria-hidden="true"></i><span class="hidden">Phone</span></a></p>
+			<p><a href="https://www.google.com/maps" target="_blank"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i><span class="hidden">Location</span></a></p>
+			<a href="javascript:void(0)" class="slideout-menu-toggle"><i class="fa fa-times fa-lg" aria-hidden="true"></i><span class="hidden">Close Menu</span></a>
+		</div>
+		<ul>
+			<li><a href="/viewcart.aspx" rel="noindex,nofollow">Cart (<span class="cart-qty"></span>)<i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a></li>
+			<li class="slide-in"><a href="javascript:void(0)">Shop <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+				<ul style="display: none;">
+					<li><a href="/living-room.inc">Living Room <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/dining-room.inc">Dining Room <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/bedroom.inc">Bedroom <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/home-office.inc">Home Office <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/entertainment.inc">Entertainment <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/accessories.inc">Accessories <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/mattresses/">Mattresses <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				</ul>
+			</li>
+			<li class="spacer">&nbsp;</li>
+			<li class="expandable"><a href="javascript:void(0)">Design</a>
+				<ul style="display: none;">
+					<li><a href="/design-center.inc">Custom Furniture <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="javascript:void(0)">Find a Designer <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/room-planner.inc">Room Planner <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				</ul>
+			</li>
+			<li class="expandable"><a href="javascript:void(0)">Learn</a>
+				<ul style="display: none;">
+					<li><a href="/about-us.inc">Our Story <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/brands.inc">Brands We Carry <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				</ul>
+			</li>
+			<li class="expandable"><a href="javascript:void(0)">Specials</a>
+				<ul style="display: none;">
+					<li><a href="/trending-wall/">Trending Wall <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/displayflyer.aspx">Special Events <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/all/department-type.aspx?sku-status=clearance">Clearance <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				</ul>
+			</li>
+			<li class="spacer">&nbsp;</li>
+			<li><a href="javascript:void(0)">Financing <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			<li><a href="/join-email.inc">Newsletter <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			<li><a href="/contact-us.inc">Contact Us <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			<li class="spacer">&nbsp;</li>
+			<li class="expandable"><a href="javascript:void(0)">Account</a>
+				<ul style="display: none;">
+					<li id="login2"><a href="/login.aspx" rel="noindex,nofollow">Login <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li id="viewAccountLink2" style="display: none;"><a href="/modifyaccount.aspx" rel="noindex,nofollow">View Account <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li id="logoutLink2" style="display: none;"><a href="homepage.aspx?logout=true" rel="noindex,nofollow">Logout <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li id="registerlink2"><a href="/createaccount.aspx" rel="noindex,nofollow">Register <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+					<li><a href="/favorites.aspx" rel="noindex,nofollow">Favorites <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
-	<ul>
-		<li><a href="/viewcart.aspx" rel="noindex,nofollow">Cart (<span class="cart-qty"></span>)<i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a></li>
-		<li class="slide-in"><a href="javascript:void(0)">Shop <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-			<ul style="display: none;">
-				<li><a href="/living-room.inc">Living Room <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/dining-room.inc">Dining Room <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/bedroom.inc">Bedroom <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/home-office.inc">Home Office <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/entertainment.inc">Entertainment <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/accessories.inc">Accessories <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/mattresses/">Mattresses <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-			</ul>
-		</li>
-		<li class="spacer">&nbsp;</li>
-		<li class="expandable"><a href="javascript:void(0)">Design</a>
-			<ul style="display: none;">
-				<li><a href="/design-center.inc">Design Center <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/room-planner.inc">Room Planner <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="javascript:void(0)">Find a Designer <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-			</ul>
-		</li>
-		<li class="expandable"><a href="javascript:void(0)">Learn</a>
-			<ul style="display: none;">
-				<li><a href="/about-us.inc">Our Story <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/brands.inc">Brands We Carry <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-			</ul>
-		</li>
-		<li class="expandable"><a href="javascript:void(0)">Specials</a>
-			<ul style="display: none;">
-				<li><a href="/trending-wall/">Trending Wall <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/displayflyer.aspx">Special Events <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/all/department-type.aspx?sku-status=clearance">Clearance <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-			</ul>
-		</li>
-		<li class="spacer">&nbsp;</li>
-		<li><a href="javascript:void(0)">Financing <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-		<li><a href="/join-email.inc">Newsletter <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-		<li><a href="/contact-us.inc">Contact Us <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-		<li class="spacer">&nbsp;</li>
-		<li class="expandable"><a href="javascript:void(0)">Account</a>
-			<ul style="display: none;">
-				<li id="login2"><a href="/login.aspx" rel="noindex,nofollow">Login <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li id="viewAccountLink2" style="display: none;"><a href="/modifyaccount.aspx" rel="noindex,nofollow">View Account <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li id="logoutLink2" style="display: none;"><a href="homepage.aspx?logout=true" rel="noindex,nofollow">Logout <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li id="registerlink2"><a href="/createaccount.aspx" rel="noindex,nofollow">Register <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-				<li><a href="/favorites.aspx" rel="noindex,nofollow">Favorites <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-			</ul>
-		</li>
-	</ul>
-</div>
+</header>
 <!--  End Header -->
 
 <!--  Homepage  -->
+<div id="home-slides">
+	<div class="owl-carousel owl-theme">
+		<img src="images/slideshow/homeslide-1_1920x950.webp" width="1920" height="950" alt="Furniture" />
+		<img src="images/slideshow/homeslide-2_1920x950.webp" width="1920" height="950" alt="Furniture" />
+		<img src="images/slideshow/homeslide-3_1920x950.webp" width="1920" height="950" alt="Furniture" />
+	</div>
+	<div id="scroll-down">
+        <a href="javascript:void(0);"><span class="hidden">Scroll Down</span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+    </div>
+</div>
+
+<script>
+	$('#home-slides .owl-carousel').owlCarousel({
+		autoplay: true,
+	    loop: true,
+	    dots: true,
+	    items: 1
+	    // responsive:{
+	    //     0:{
+	    //         items:1
+	    //     },
+	    //     600:{
+	    //         items:3
+	    //     },
+	    //     1000:{
+	    //         items:5
+	    //     }
+	    // }
+	});
+</script>
+
 <main>
 
-	<section id="home-slides">
-		<slideshow id="slideshowid" width="1180" height="540" path="SlideShows/Home Page"></slideshow>
-		<div id="scroll-down">
-	        <a href="javascript:void(0);"><span class="hidden">Scroll Down</span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-	    </div>
-	</section>
+	<h1 class="hidden">Charlotte Theme</h1>
 
 	<section id="browse-rooms">
 		<div class="grid-container">
@@ -345,11 +426,11 @@
 						<p>make it your own!</p>
 						<a href="/design-center.inc">
 							<div class="banner-heading">
-								<h2>Design Center</h2>
+								<h2>Custom Furniture</h2>
 							</div>
 							<div class="banner-img">
 								<div class="banner-img-hov">
-									<img src="images/homeban-design.jpg" width="783" height="337" alt="Design Center" />
+									<img src="images/homeban-design.jpg" width="783" height="337" alt="Custom Furniture" />
 								</div>
 							</div>
 							<div class="banner-btn">
@@ -494,13 +575,17 @@
 			<div class="grid-100 tablet-grid-80 tablet-prefix-10 grid-parent">
 				<div id="about-us">
 					<div class="grid-50">
-						<div id="video">
+						<video controls autoplay="true" muted="true" width="680">
+						    <source src="media/sample-video.mp4" type="video/mp4">
+						    Sorry, your browser doesn't support embedded videos.
+						</video>
+						<!-- <div id="video">
 				            <iframe width="500" height="280" src="https://www.youtube.com/embed/iR2M37Zih2c?rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-				        </div>
+				        </div> -->
 				    </div>
 				    <div class="grid-50">
 						<div class="home-copy">
-							<p>M.D. Home Furnishings in Charlotte, NC has earned a reputation for providing quality furniture at competitive prices since 1927. We are a full service home furniture store including free in-home design services, free delivery and free financing.</p><br />
+							<p>M.D. Home Furnishings in Springfield has earned a reputation for providing quality furniture at competitive prices since 1927. We are a full service home furniture store including free in-home design services, free delivery and free financing.</p><br />
 							<p>At M.D. Home Furnishings, we carry a complete line up of home furniture including Living Rooms, Dining Rooms, Family Rooms, Home Office, Entertainment, Outdoor, Bedrooms, Youth Bedrooms, Mattresses and even Bedding. We offer a "good, better, best" price range in all of these categories.</p>
 						</div>
 					</div>
@@ -519,6 +604,7 @@
 						<input class="validate[required,custom[email]]" type="text" id="SignUpEmailAddress" name="EmailSignup_EmailAddress" placeholder="Enter your email" />
 						<label class="hidden" for="EmailSignup_submit">Submit</label>
 						<input name="EmailSignup_submit" id="EmailSignup_submit" class="submit-button" type="Submit" value="Sign Up" />
+						<div class="clear"></div>
 					</div>
 				</div>
 			</div>
@@ -549,7 +635,7 @@
 					<ul>
 						<li><a href="/about-us.inc">Our Story</a></li>
 						<li><a href="/displayflyer.aspx">Promotions</a></li>
-						<li><a href="/design-center.inc">Design Center</a></li>
+						<li><a href="/design-center.inc">Custom Furniture</a></li>
 						<li><a href="/room-planner.inc">Room Planner</a></li>
 						<li><a href="/brands.inc">Brands</a></li>
 						<li><a href="/join-email.inc">Newsletter</a></li>
@@ -576,7 +662,78 @@
 			<div class="grid-25 tablet-grid-25">
 				<div class="footer-column">
 					<p><span>Brands</span></p>
-					<AttributeList id="FooterBrands" ListAttribute="Brand" ItemType="item"></AttributeList>
+					<ul id="FooterBrands">
+					    <li><a href="#">American Drew</a></li>
+					    <li><a href="#">American Leather</a></li>
+					    <li><a href="#">Arbor Home</a></li>
+					    <li><a href="#">Arteriors</a></li>
+					    <li><a href="#">Baker</a></li>
+					    <li><a href="#">Bassett</a></li>
+					    <li><a href="#">BDI</a></li>
+					    <li><a href="#">Beautyrest</a></li>
+					    <li><a href="#">BenchMark</a></li>
+					    <li><a href="#">Bernhardt</a></li>
+					    <li><a href="#">Bradington-Young</a></li>
+					    <li><a href="#">Butler</a></li>
+					    <li><a href="#">Caracole</a></li>
+					    <li><a href="#">Century Furniture</a></li>
+					    <li><a href="#">Charleston Forge</a></li>
+					    <li><a href="#">Contempo</a></li>
+					    <li><a href="#">CTH-Sherrill Occasional</a></li>
+					    <li><a href="#">Embassy Home</a></li>
+					    <li><a href="#">Essentials for Living</a></li>
+					    <li><a href="#">Feizy Rugs</a></li>
+					    <li><a href="#">Flexsteel</a></li>
+					    <li><a href="#">Gat Creek</a></li>
+					    <li><a href="#">Hammary</a></li>
+					    <li><a href="#">Hancock and Moore</a></li>
+					    <li><a href="#">Hickory Chair</a></li>
+					    <li><a href="#">Hickory White</a></li>
+					    <li><a href="#">Highland House</a></li>
+					    <li><a href="#">Hillsdale Furniture</a></li>
+					    <li><a href="#">Hooker Furniture</a></li>
+					    <li><a href="#">Howard Miller</a></li>
+					    <li><a href="#">IMAX</a></li>
+					    <li><a href="#">Jonathan Charles</a></li>
+					    <li><a href="#">Kincaid Furniture</a></li>
+					    <li><a href="#">Legacy Classics Furniture</a></li>
+					    <li><a href="#">La-Z-Boy</a></li>
+					    <li><a href="#">Legacy Classic Kids</a></li>
+					    <li><a href="#">Lexington</a></li>
+					    <li><a href="#">Magnussen Home</a></li>
+					    <li><a href="#">Main and Madison</a></li>
+					    <li><a href="#">Maitland-Smith</a></li>
+					    <li><a href="#">MARQ</a></li>
+					    <li><a href="#">Naturepedic Mattress</a></li>
+					    <li><a href="#">Newport</a></li>
+					    <li><a href="#">Nourison</a></li>
+					    <li><a href="#">Pacific Coast Lighting</a></li>
+					    <li><a href="#">Palettes by Winesburg</a></li>
+					    <li><a href="#">Paragon Furniture</a></li>
+					    <li><a href="#">Paul Robert</a></li>
+					    <li><a href="#">Paula Deen</a></li>
+					    <li><a href="#">Pulaski Furniture</a></li>
+					    <li><a href="#">Rachael Ray</a></li>
+					    <li><a href="#">Riverside</a></li>
+					    <li><a href="#">Serta Mattress</a></li>
+					    <li><a href="#">Sam Moore</a></li>
+					    <li><a href="#">Sligh</a></li>
+					    <li><a href="#">Stanley Furniture</a></li>
+					    <li><a href="#">Stearns &amp; Foster</a></li>
+					    <li><a href="#">Stone &amp; Leigh</a></li>
+					    <li><a href="#">Stressless by Ekornes</a></li>
+					    <li><a href="#">Summer Classics</a></li>
+					    <li><a href="#">Surya Rugs</a></li>
+					    <li><a href="#">Tempur-Pedic</a></li>
+					    <li><a href="#">Theodore Alexander</a></li>
+					    <li><a href="#">Universal</a></li>
+					    <li><a href="#">Uttermost</a></li>
+					    <li><a href="#">Valley View Oak</a></li>
+					    <li><a href="#">Vaughan Bassett</a></li>
+					    <li><a href="#">Wesley Allen</a></li>
+					    <li><a href="#">Westport Chair Co.</a></li>
+					    <li><a href="#">Woodbridge Furniture</a></li>
+					</ul>
 				</div>
 			</div>
 
@@ -584,8 +741,8 @@
 				<div class="footer-column">
 					<p><span>Contact</span></p>
 					<p>M.D. Home Furnishings</p>
-					<p>11301 Carmel Commons Blvd.<br />Charlotte, NC 28226</p><br />
-					<p><strong>Phone:</strong> <span>888-888-8888</span><br /><br /><a href="/contact-us.inc"><strong>Get Directions</strong></a></p>
+					<p>742 Evergreen Terrace<br />Springfield, ST 50505</p><br />
+					<p><strong>Phone:</strong> <span>800-555-1234</span><br /><br /><a href="https://en.wikipedia.org/wiki/The_Simpsons_house" target="_blank"><strong>Get Directions</strong></a></p>
 				</div>
 			</div>
 			<div class="clear"></div>
@@ -600,11 +757,6 @@
 	</div>
 </footer>
 <!--  End Footer  -->
-
-<script src="../packages/jquery-3.3.1.min.js"></script>
-<script src="../packages/owl.carousel.min.js"></script>
-<script src="../packages/jquery.magnific-popup.min.js"></script>
-<script src="charlotte.js"></script>
 
 </body>
 </html>
