@@ -24,6 +24,25 @@ img {
 	margin: 0 auto;
 }
 
+a.button {
+	display: inline-block;
+	padding: 12px 24px;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 2px;
+	color: #fff;
+	background-color: #555;
+	-webkit-transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+    -ms-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+}
+
+a.button:hover {
+	background-color: #777;
+}
+
 nav {
 	position: sticky;
 	top: 78px;
@@ -33,6 +52,7 @@ nav {
 	z-index: 1;
     background-color: #fff;
     border-bottom: 1px solid #e5e5e5;
+    margin-bottom: -156px;
 }
 
 nav li {
@@ -100,16 +120,27 @@ nav li a.active span {
     opacity: .75;
 }
 
-.hero h1 {
+.hero h1,
+.hero a {
     position: absolute;
-    bottom: 50%;
     left: 50%;
     z-index: 1;
     text-align: center;
-    font-size: 2.5rem;
     color: #fff;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+}
+
+.hero h1 {
+    bottom: 50%;
+    font-size: 2.5rem;
+}
+
+.hero a {
+	bottom: 20%;
+	padding: 35px;
+	text-transform: uppercase;
+	text-decoration: none;
 }
 
 .hero h1 span {
@@ -121,11 +152,12 @@ nav li a.active span {
 }
 
 main section {
-	margin-bottom: 50px;
+	margin: -75px 0 50px;
+	padding-top: 75px;
 }
 
 section .container {
-	padding: 0 30px;
+	padding: 35px 30px 0;
 }
 
 main h1 {
@@ -158,6 +190,16 @@ main h1 span {
 #about h2 {
 	margin: 20px 0;
 	text-align: center;
+}
+
+#about a {
+	margin-top: 25px;
+	padding-right: 16px;
+}
+
+#about a i {
+	padding-left: 12px;
+    font-size: 1.125em;
 }
 
 #about .percent-bars {
@@ -223,8 +265,7 @@ main h1 span {
 
 /*** Portfolio Section ***/
 
-#portfolio {
-	padding: 35px 0 50px;
+#portfolio>div {
 	background-color: #f9f9f9;
 }
 
