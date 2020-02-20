@@ -2,7 +2,16 @@ body, html, h1, h2, h3, h4, h5, h6, p, ul {
     margin: 0;
     padding: 0;
     color: #2a2a2a;
-    font-family: Arial, sans-serif;
+    font-family: 'Rubik', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+}
+
+p {
+	font-weight: 300;
+	line-height: 1.5;
 }
 
 img {
@@ -27,79 +36,24 @@ img {
 a.button {
 	display: inline-block;
 	box-sizing: border-box;
-	padding: 12px 24px;
+	padding: 12px 18px;
 	text-decoration: none;
 	text-transform: uppercase;
 	border-radius: 2px;
-	color: #fff;
-	background-color: #555;
-	-webkit-transition: background-color .3s ease;
-    -moz-transition: background-color .3s ease;
-    -o-transition: background-color .3s ease;
-    -ms-transition: background-color .3s ease;
-    transition: background-color .3s ease;
-}
-
-a.button:hover {
-	background-color: #777;
-}
-
-nav {
-	position: sticky;
-	top: 78px;
-	width: 100%;
-	height: 78px;
-	transform: translateY(-100%);
-	z-index: 1;
-    background-color: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: -156px;
-}
-
-nav li {
-	list-style: none;
-	display: inline-block;
-}
-
-nav li a {
-	display: block;
-	text-transform: uppercase;
-    text-decoration: none;
-    color: #222;
-    padding: 30px 25px 12px;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
-}
-
-nav li a span {
-	display: block;
-	height: 3px;
-	width: 0%;
-	margin-top: 15px;
-	background-color: #555;
-	-webkit-transition: all .8s ease;
-    -moz-transition: all .8s ease;
-    -o-transition: all .8s ease;
-    -ms-transition: all .8s ease;
-    transition: all .8s ease;
-}
-
-nav li a:hover,
-nav li a.active {
-	color: #555;
-}
-
-nav li a:hover span,
-nav li a.active span {
-	width: 100%;
+	color: #22496e;
+    background-color: #e7ebee;
+    border-left: 5px solid;
 	-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -o-transition: all .3s ease;
     -ms-transition: all .3s ease;
     transition: all .3s ease;
+}
+
+a.button:hover {
+	color: #2d6eac;
+	background-color: #f1f4f6;
+	border-color: #2d6eac;
 }
 
 .hero {
@@ -137,19 +91,106 @@ nav li a.active span {
     font-size: 2.5rem;
 }
 
+.hero h1 span {
+    font-weight: 300;
+}
+
+.hero h1 span:not(:first-child) {
+	font-size: .55em;
+}
+
 .hero a {
 	bottom: 20%;
 	padding: 35px;
 	text-transform: uppercase;
 	text-decoration: none;
+	-webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
-.hero h1 span {
-    font-weight: 200;
+.hero a span {
+	position: relative;
 }
 
-.hero h1 span:not(:first-child) {
-	font-size: .55em;
+.hero a i {
+	position: absolute;
+	-webkit-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+    bottom: -15px;
+    -webkit-transition: bottom .3s ease;
+    -moz-transition: bottom .3s ease;
+    -o-transition: bottom .3s ease;
+    -ms-transition: bottom .3s ease;
+    transition: bottom .3s ease;
+}
+
+.hero a:hover i {
+	bottom: -30px;
+}
+
+nav {
+	position: sticky;
+	top: 78px;
+	width: 100%;
+	height: 78px;
+	transform: translateY(-100%);
+	z-index: 1;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: -156px;
+}
+
+nav li {
+	list-style: none;
+	display: inline-block;
+}
+
+nav li a {
+	display: block;
+	text-transform: uppercase;
+    text-decoration: none;
+    color: #2a2a2a;
+    padding: 30px 25px 12px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+nav li a span {
+	display: block;
+	height: 3px;
+	width: 0%;
+	margin-top: 15px;
+	border-radius: .5px;
+	background-color: #22496e;
+	-webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    transition: all .8s ease;
+}
+
+nav li a:hover {
+	color: #2d6eac;
+}
+
+nav li a:hover span {
+	background-color: #2d6eac;
+}
+
+nav li a:hover span,
+nav li a.active span {
+	width: 100%;
+	-webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
 }
 
 main section {
@@ -169,7 +210,20 @@ main h1 {
 }
 
 main h1 span {
-	border-bottom: 3px solid #555;
+	position: relative;
+	padding-bottom: 10px;
+	/*border-bottom: 3px solid #22496e;*/
+}
+
+main h1 span::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -3px;
+	height: 3px;
+	border-radius: 1px;
+	background-color: #22496e;
 }
 
 /*** About Section ***/
@@ -177,7 +231,7 @@ main h1 span {
 #about .container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 50px 80px;
+	grid-gap: 20px 80px;
 }
 
 #about aside:first-of-type {
@@ -212,7 +266,7 @@ main h1 span {
 }
 
 #about .percent-bars div {
-	background-color: #ddd;
+	background-color: #e7ebee;
 	/*box-shadow: 0 0 5px 0 rgba(0,0,0,.1)*/
 	border-radius: 2px;
 }
@@ -221,14 +275,14 @@ main h1 span {
 	color: #fff;
 }
 
-#about .percent-bars div p span:first-child {
-	background-color: #bbb
-}
+/*#about .percent-bars div p span:first-child {
+	background-color: #bbb;
+}*/
 
 #about .percent-bars div p {
 	box-sizing: border-box;
     margin-bottom: 10px;
-    background-color: #666;
+    background-color: #22496e;
     border-radius: 2px 0 0px 2px;
     overflow: hidden;
     -webkit-transition: width .75s ease-out;
@@ -239,13 +293,19 @@ main h1 span {
 }
 
 #about .percent-bars div i {
+	display: inline-block;
+    vertical-align: middle;
     padding: 10px;
     width: 24px;
     height: 20px;
     line-height: 20px;
     font-size: 1.5rem;
     text-align: center;
-    background-color: #999;
+}
+
+#about .percent-bars div span:first-of-type {
+    display: inline-block;
+    font-size: .75rem;
 }
 
 #about .percent-90 p {
@@ -272,7 +332,7 @@ main h1 span {
 
 #portfolio>div {
 	padding-bottom: 30px;
-	background-color: #f9f9f9;
+	background-color: #f1f4f6;
 }
 
 #portfolio .container>div {
@@ -298,7 +358,7 @@ main h1 span {
 #portfolio ul {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	grid-gap: 50px 30px;
+	grid-gap: 30px;
 }
 
 #portfolio li {
@@ -388,6 +448,14 @@ main h1 span {
 	padding: 5px;
 }
 
+#portfolio li a h3 {
+	color: #22496e;
+}
+
+#portfolio li a p {
+	font-size: .9rem;
+}
+
 footer {
 	padding: 10px 30px;
 	text-align: center;
@@ -403,7 +471,7 @@ footer a {
 	display: block;
 	padding: 10px;
 	margin-left: -10px;
-	color: #555;
+	color: #22496e;
 	-webkit-transition: color .3s ease;
     -moz-transition: color .3s ease;
     -o-transition: color .3s ease;
@@ -458,6 +526,9 @@ footer a:hover {
 		margin: 10px 0 20px;
 	}
 
+	#portfolio ul {
+	    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -471,7 +542,7 @@ footer a:hover {
     }
 
     #about aside:first-of-type div {
-		padding-top: 0;
+		padding-top: 10px;
 	}
 
     #about a {
@@ -518,5 +589,9 @@ footer a:hover {
 
 	main h2 {
 		font-size: 1.25rem;
+	}
+
+	p {
+		font-size: .9rem;
 	}
 }
