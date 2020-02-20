@@ -14,6 +14,10 @@ p {
 	line-height: 1.5;
 }
 
+strong {
+	font-weight: 500;
+}
+
 img {
     border: 0;
     max-width: 100%;
@@ -28,12 +32,16 @@ img {
     display: none;
 }
 
+span.no-wrap {
+	white-space: nowrap;
+}
+
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-a.button {
+/*a.button {
 	display: inline-block;
 	box-sizing: border-box;
 	padding: 12px 18px;
@@ -48,13 +56,13 @@ a.button {
     -o-transition: all .3s ease;
     -ms-transition: all .3s ease;
     transition: all .3s ease;
-}
+}*/
 
-a.button:hover {
+/*a.button:hover {
 	color: #2d6eac;
 	background-color: #f1f4f6;
 	border-color: #2d6eac;
-}
+}*/
 
 .hero {
     position: relative;
@@ -148,20 +156,30 @@ nav li {
 	display: inline-block;
 }
 
-nav li a {
-	display: block;
+nav li a,
+#about a {
 	text-transform: uppercase;
     text-decoration: none;
     color: #2a2a2a;
-    padding: 30px 25px 12px;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    transition: color .3s ease;
 }
 
-nav li a span {
+nav li a {
+	display: block;
+    padding: 30px 25px 12px;
+}
+
+#about a {
+	display: inline-block;
+	padding: 30px 0 12px;
+}
+
+nav li a span,
+#about a span {
 	display: block;
 	height: 3px;
 	width: 0%;
@@ -175,7 +193,21 @@ nav li a span {
     transition: all .8s ease;
 }
 
-nav li a:hover {
+nav li a span {
+	background-color: #22496e;
+	-webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    transition: all .8s ease;
+}
+
+#about a span {
+	background-color: #2d6eac;
+}
+
+nav li a:hover,
+#about a:hover {
 	color: #2d6eac;
 }
 
@@ -184,7 +216,8 @@ nav li a:hover span {
 }
 
 nav li a:hover span,
-nav li a.active span {
+nav li a.active span,
+#about a:hover span {
 	width: 100%;
 	-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -251,36 +284,79 @@ main h1 span::after {
 	text-align: center;
 }
 
-#about a {
+/*#about a {
+	position: relative;
+	overflow: hidden;
 	margin-top: 25px;
 	padding-right: 16px;
 }
+
+#about a {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 12px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 2px;
+	color: #22496e;
+    background-color: #e7ebee;
+    border-left: 5px solid;
+	-webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}*/
 
 #about a i {
 	padding-left: 12px;
     font-size: 1.125em;
 }
 
-#about .percent-bars {
+/*#about a span {*/
+	/*content: "Resume \f1c1";
+	font-family: "Font Awesome 5 Pro";*/
+/*	position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    overflow: hidden;
+    color: #fff;
+    background-color: #22496e;
+    width: 0;
+    -webkit-transition: width .75s ease-out;
+    -moz-transition: width .75s ease-out;
+    -o-transition: width .75s ease-out;
+    -ms-transition: width .75s ease-out;
+    transition: width .75s ease-out;
+}
+
+#about a:hover::before {
+	width: 100%;
+}
+*/
+.percent-bars {
 	margin-bottom: 25px;
 }
 
-#about .percent-bars div {
+.percent-bars div {
 	background-color: #e7ebee;
 	/*box-shadow: 0 0 5px 0 rgba(0,0,0,.1)*/
 	border-radius: 2px;
 }
 
-#about .percent-bars p {
+.percent-bars p {
 	color: #fff;
 }
 
-/*#about .percent-bars div p span:first-child {
+/*.percent-bars div p span:first-child {
 	background-color: #bbb;
 }*/
 
-#about .percent-bars div p {
+.percent-bars div p {
 	box-sizing: border-box;
+	height: 40px;
     margin-bottom: 10px;
     background-color: #22496e;
     border-radius: 2px 0 0px 2px;
@@ -292,7 +368,7 @@ main h1 span::after {
     transition: width .75s ease-out;
 }
 
-#about .percent-bars div i {
+.percent-bars div i {
 	display: inline-block;
     vertical-align: middle;
     padding: 10px;
@@ -303,29 +379,33 @@ main h1 span::after {
     text-align: center;
 }
 
-#about .percent-bars div span:first-of-type {
+.percent-bars div span:first-of-type {
     display: inline-block;
     font-size: .75rem;
 }
 
-#about .percent-90 p {
+.percent-90 p {
 	width: 90%;
 }
 
-#about .percent-80 p {
+.percent-80 p {
 	width: 80%;
 }
 
-#about .percent-70 p {
+.percent-70 p {
 	width: 70%;
 }
 
-#about .percent-60 p {
+.percent-60 p {
 	width: 60%;
 }
 
-#about .percent-50 p {
+.percent-50 p {
 	width: 50%;
+}
+
+.percent-bars .before-animate {
+	width: 44px !important;
 }
 
 /*** Portfolio Section ***/
@@ -359,16 +439,17 @@ main h1 span::after {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	grid-gap: 30px;
+	list-style: none;
 }
 
-#portfolio li {
-	display: block;
+/*#portfolio li {
+	display: block;*/
 	/*text-align: center;*/
-	background-color: #fff;
+	/*background-color: #fff;*/
     /*box-shadow: 0 0 7px 0 rgba(0,0,0,.05);*/
-    border-radius: 2px;
-    overflow: hidden;
-}
+    /*border-radius: 2px;
+    overflow: hidden;*/
+/*}*/
 
 #portfolio li a {
 	/*display: block;
@@ -425,7 +506,8 @@ main h1 span::after {
 	display: block;
 	/*position: relative;*/
 	width: 100%;
-	border-bottom: 1px solid #e5e5e5;
+	border-radius: 2px;
+	/*border-bottom: 1px solid #e5e5e5;*/
 	/*opacity: 1;
 	-webkit-transition: opacity .3s ease;
     -moz-transition: opacity .3s ease;
@@ -439,7 +521,7 @@ main h1 span::after {
 }*/
 
 #portfolio li a div:last-child {
-	padding: 15px;
+	padding: 15px 0;
     text-align: left;
 }
 
@@ -480,7 +562,7 @@ footer a {
 }
 
 footer a:hover {
-	color: #777;
+	color: #2d6eac;
 }
 
 
@@ -545,9 +627,19 @@ footer a:hover {
 		padding-top: 10px;
 	}
 
+	#about aside:last-of-type > div:last-child {
+		text-align: center;
+	}
+
     #about a {
-    	width: 100%;
-    	text-align: center;
+    	margin-top: 25px;
+		padding: 10px 16px 10px 20px;
+		border: 2px solid #2d6eac;
+		border-radius: 2px;
+    }
+
+    #about a span {
+    	display: none;
     }
 }
 
