@@ -24,9 +24,9 @@
 <!-- <include src="includes/header.inc">Loading...</include> -->
 
 <!-- Header  -->
-<div id="header">
-    <div class="grid-container">
-        <div class="mega-width">
+<header>
+    <div id="mega-container">
+        <div id="header-container">
             <div class="grid-40 tablet-grid-50 mobile-grid-50 grid-parent">
                 <div id="logo">
                     <a href="/"><img src="images/logo.png" alt="MICROD home furnishings" width="150" height="45" /></a>
@@ -190,12 +190,12 @@
                         </a>
                         <div id="search-bar" class="dropdown">
                             <div id="search-left">
-                                <label class="hidden" for="SearchValue">Search Keyword</label>
-								<input type="text" name="Search_Value" placeholder="Search.." value="" />
+                                <label class="hidden" for="search-value">Search Keyword</label>
+								<input id="search-value" type="text" name="Search_Value" placeholder="Search.." value="" />
                             </div>
                             <div id="search-right">
-                                <label class="hidden" for="searchbutton">Search</label>
-								<input name="Search_Button" type="Submit" value="Go" />
+                                <label class="hidden" for="search-button">Search</label>
+								<input id="search-button" class="button button-red" name="Search_Button" type="Submit" value="Go" />
                             </div>
                         </div>
                     </li>
@@ -226,7 +226,7 @@
             <div class="clear"></div>
         </div>
     </div>
-</div>
+</header>
 
 <div id="slideout-menu">
     <div>
@@ -279,306 +279,309 @@
 <!--  End Header -->
 
 <!--  Homepage  -->
-<div id="home-slides" class="grid-container">
-	<div class="home-slideshow owl-carousel owl-theme">
-		<img src="images/slideshow/homeslide-01.jpg" width="1920" height="950" alt="Furniture" />
-		<img src="images/slideshow/homeslide-02.jpg" width="1920" height="950" alt="Furniture" />
-		<img src="images/slideshow/homeslide-03.jpg" width="1920" height="950" alt="Furniture" />
-	</div>
-</div>
+<main>
 
-<script>
-	$('#home-slides .owl-carousel').owlCarousel({
-		autoplay: true,
-	    loop: true,
-	    dots: true,
-	    items: 1
-	    // responsive:{
-	    //     0:{
-	    //         items:1
-	    //     },
-	    //     600:{
-	    //         items:3
-	    //     },
-	    //     1000:{
-	    //         items:5
-	    //     }
-	    // }
-	});
-</script>
-
-<section class="home-section" id="home-slider">
-    <div>
-        <div class="home-title">
-            <h1>Featured Items</h1>
-        </div>
-        <div class="grid-container">
-            <div class="grid-60 prefix-20 tablet-grid-80 tablet-prefix-10">
-                <p>Check out these featured items which are hand picked by our designers to help you keep up with what's hot in today's market.</p>
-            </div>
-        </div>
+    <div id="home-slides">
+    	<div class="home-slideshow owl-carousel owl-theme">
+    		<img src="images/slideshow/homeslide-01.jpg" width="1920" height="950" alt="Furniture" />
+    		<img src="images/slideshow/homeslide-02.jpg" width="1920" height="950" alt="Furniture" />
+    		<img src="images/slideshow/homeslide-03.jpg" width="1920" height="950" alt="Furniture" />
+    	</div>
     </div>
 
-    <div class="grid-container">
-        <div class="grid-100">
-            <div id="featured-slider">
-            	<ul class="owl-carousel owl-theme">
-					<li>
-						<a href="#">
-							<img src="https://via.placeholder.com/300" width="" height="" alt="" />
-							<p>ItemInfo</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="https://via.placeholder.com/300" width="" height="" alt="" />
-							<p>ItemInfo</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="https://via.placeholder.com/300" width="" height="" alt="" />
-							<p>ItemInfo</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="https://via.placeholder.com/300" width="" height="" alt="" />
-							<p>ItemInfo</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="https://via.placeholder.com/300" width="" height="" alt="" />
-							<p>ItemInfo</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="https://via.placeholder.com/300" width="" height="" alt="" />
-							<p>ItemInfo</p>
-						</a>
-					</li>
-            	</ul>
-                <ItemList id="featured-slider" class="owl-carousel" FilterAttribute="SKUStatus" FilterAttributeValue="FeaturedProduct" ItemType="item" ThumbnailWidth="456" Thumbnail="Yes"></ItemList>
-                <script>
-                    $(document).ready(function() {
-                        $("#featured-slider .owl-carousel").owlCarousel({
-                            margin : 50,
-                            autoplay : true,
-                            autoplaySpeed : 750,
-                            loop: true,
-                            lazyLoad : true,
-                            dots : false,
-                            nav : true,
-                            navText : ["<i class=\"fa fa-4x fa-angle-left\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-4x fa-angle-right\" aria-hidden=\"true\"></i>"],
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                400:{
-                                    items:2
-                                },
-                                768:{
-                                    items:3
-                                },
-                                1024:{
-                                    items:4
-                                },
-                                1600:{
-                                    items:5
-                                }
-                            }
-                        });
-                    });
-                </script>
-            </div>
-        </div>
-    </div>
-    <div class="featured-button">
-        <a class="button" href="#">View All</a>
-    </div>
-</section>
+    <script>
+    	$('#home-slides .owl-carousel').owlCarousel({
+    		autoplay: true,
+    	    loop: true,
+    	    dots: true,
+    	    items: 1
+    	    // responsive:{
+    	    //     0:{
+    	    //         items:1
+    	    //     },
+    	    //     600:{
+    	    //         items:3
+    	    //     },
+    	    //     1000:{
+    	    //         items:5
+    	    //     }
+    	    // }
+    	});
+    </script>
 
-<section class="home-section" id="home-banners">
-    <div>
-        <div class="home-title">
-            <h1>Choose a Room</h1>
-        </div>
-        <div class="grid-container hide-on-desktop">
-            <div class="tablet-grid-80 tablet-prefix-10">
-                <p>Tap a room image to get started</p>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-
-    <div class="grid-container">
-        <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front face">
-                        <img src="images/homeban-living.jpg" />
-                    </div>
-                    <div class="back face">
-                        <a href="/living-room.inc">
-                            <img src="images/homeban-living.jpg" />
-                            <p>Living Room<br />
-                            <span>cozy and comfortable.</span></p>
-                            <div class="button button-red" href="/living-room.inc">Shop</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front face">
-                        <img src="images/homeban-dining.jpg" />
-                    </div>
-                    <div class="back face">
-                        <a href="/dining-room.inc">
-                            <img src="images/homeban-dining.jpg" />
-                            <p>Dining Room<br />
-                            <span>warm and inviting.</span></p>
-                            <div class="button button-red" href="/dining-room.inc">Shop</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mobile-clear"></div>
-
-        <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front face">
-                        <img src="images/homeban-bed.jpg" />
-                    </div>
-                    <div class="back face">
-                        <a href="/bedroom.inc">
-                            <img src="images/homeban-bed.jpg" />
-                            <p>Bedroom<br />
-                            <span>rest easy, awake refreshed.</span></p>
-                            <div class="button button-red" href="/bedroom.inc">Shop</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tablet-clear desktop-clear"></div>
-
-        <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front face">
-                        <img src="images/homeban-office.jpg" />
-                    </div>
-                    <div class="back face">
-                        <a href="/home-office.inc">
-                            <img src="images/homeban-office.jpg" />
-                            <p>Home Office<br />
-                            <span>inspire and create.</span></p>
-                            <div class="button button-red" href="/home-office.inc">Shop</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mobile-clear"></div>
-
-        <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front face">
-                        <img src="images/homeban-entertain.jpg" />
-                    </div>
-                    <div class="back face">
-                        <a href="/entertainment.inc">
-                            <img src="images/homeban-entertain.jpg" />
-                            <p>Entertainment<br />
-                            <span>form, function and fun.</span></p>
-                            <div class="button button-red" href="/entertainment.inc">Shop</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
-            <div class="card-container">
-                <div class="card">
-                    <div class="front face">
-                        <img src="images/homeban-accessories.jpg" />
-                    </div>
-                    <div class="back face">
-                        <a href="/accessories.inc">
-                            <img src="images/homeban-accessories.jpg" />
-                            <p>Accessories<br />
-                            <span>make it your own.</span></p>
-                            <div class="button button-red" href="/accessories.inc">Shop</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-</section>
-
-<section class="home-section" id="about-us">
-    <div>
+    <section class="home-section" id="home-slider">
         <div>
             <div class="home-title">
-                <h1>Our Company</h1>
+                <h1>Featured Items</h1>
             </div>
             <div class="grid-container">
                 <div class="grid-60 prefix-20 tablet-grid-80 tablet-prefix-10">
-                    <div>
-                        <include file="CustomerContent/Home Copy.inc"></include>
-                    </div>
+                    <p>Check out these featured items which are hand picked by our designers to help you keep up with what's hot in today's market.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-100">
+                <div class="featured-slider">
+                	<ul class="owl-carousel owl-theme">
+    					<li>
+    						<a href="#">
+    							<img src="images/item-1.jpg" width="300" height="280" alt="Throw Pillow" />
+    							<p>Flower Print<br />Throw Pillow</p>
+    						</a>
+    					</li>
+    					<li>
+    						<a href="#">
+    							<img src="images/item-2.jpg" width="300" height="280" alt="Wing Chair" />
+    							<p>Fancy High Back<br />Wing Chair</p>
+    						</a>
+    					</li>
+    					<li>
+    						<a href="#">
+    							<img src="images/item-3.jpg" width="300" height="280" alt="Green Sofa" />
+    							<p>Retro Vibe<br />Green Sofa</p>
+    						</a>
+    					</li>
+    					<li>
+    						<a href="#">
+    							<img src="images/item-4.jpg" width="300" height="280" alt="Accent Chair" />
+    							<p>Rotating<br />Accent Chair</p>
+    						</a>
+    					</li>
+    					<li>
+    						<a href="#">
+    							<img src="images/item-5.jpg" width="300" height="280" alt="Media Console" />
+    							<p>Retro Vibe<br />Media Console</p>
+    						</a>
+    					</li>
+    					<li>
+    						<a href="#">
+    							<img src="images/item-6.jpg" width="300" height="280" alt="Leather Sofa" />
+    							<p>Standard<br />Leather Sofa</p>
+    						</a>
+    					</li>
+                	</ul>
+                    <ItemList id="featured-slider" class="owl-carousel" FilterAttribute="SKUStatus" FilterAttributeValue="FeaturedProduct" ItemType="item" ThumbnailWidth="456" Thumbnail="Yes"></ItemList>
+                    <script>
+                        $(document).ready(function() {
+                            $(".featured-slider .owl-carousel").owlCarousel({
+                                margin : 50,
+                                autoplay : true,
+                                autoplaySpeed : 750,
+                                loop: true,
+                                lazyLoad : true,
+                                dots : false,
+                                nav : true,
+                                navText : ["<i class=\"fa fa-4x fa-angle-left\" aria-hidden=\"true\"></i>", "<i class=\"fa fa-4x fa-angle-right\" aria-hidden=\"true\"></i>"],
+                                responsive:{
+                                    0:{
+                                        items:1
+                                    },
+                                    400:{
+                                        items:2
+                                    },
+                                    768:{
+                                        items:3
+                                    },
+                                    1024:{
+                                        items:4
+                                    },
+                                    1600:{
+                                        items:5
+                                    }
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="featured-button">
+            <a class="button" href="#">View All</a>
+        </div>
+    </section>
+
+    <section class="home-section" id="home-banners">
+        <div>
+            <div class="home-title">
+                <h1>Choose a Room</h1>
+            </div>
+            <div class="grid-container hide-on-desktop">
+                <div class="tablet-grid-80 tablet-prefix-10">
+                    <p>Tap a room image to get started</p>
                 </div>
                 <div class="clear"></div>
             </div>
         </div>
+
         <div class="grid-container">
-            <div class="grid-60 prefix-20 tablet-grid-80 tablet-prefix-10 mobile-grid-90 mobile-prefix-5">
-                <div id="video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iR2M37Zih2c?rel=0&amp;controls=0&amp;showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front face">
+                            <img src="images/homeban-living.jpg" />
+                        </div>
+                        <div class="back face">
+                            <a href="/living-room.inc">
+                                <img src="images/homeban-living.jpg" />
+                                <p>Living Room<br />
+                                <span>cozy and comfortable.</span></p>
+                                <div class="button button-red" href="/living-room.inc">Shop</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front face">
+                            <img src="images/homeban-dining.jpg" />
+                        </div>
+                        <div class="back face">
+                            <a href="/dining-room.inc">
+                                <img src="images/homeban-dining.jpg" />
+                                <p>Dining Room<br />
+                                <span>warm and inviting.</span></p>
+                                <div class="button button-red" href="/dining-room.inc">Shop</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-clear"></div>
+
+            <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front face">
+                            <img src="images/homeban-bed.jpg" />
+                        </div>
+                        <div class="back face">
+                            <a href="/bedroom.inc">
+                                <img src="images/homeban-bed.jpg" />
+                                <p>Bedroom<br />
+                                <span>rest easy, awake refreshed.</span></p>
+                                <div class="button button-red" href="/bedroom.inc">Shop</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tablet-clear desktop-clear"></div>
+
+            <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front face">
+                            <img src="images/homeban-office.jpg" />
+                        </div>
+                        <div class="back face">
+                            <a href="/home-office.inc">
+                                <img src="images/homeban-office.jpg" />
+                                <p>Home Office<br />
+                                <span>inspire and create.</span></p>
+                                <div class="button button-red" href="/home-office.inc">Shop</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-clear"></div>
+
+            <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front face">
+                            <img src="images/homeban-entertain.jpg" />
+                        </div>
+                        <div class="back face">
+                            <a href="/entertainment.inc">
+                                <img src="images/homeban-entertain.jpg" />
+                                <p>Entertainment<br />
+                                <span>form, function and fun.</span></p>
+                                <div class="button button-red" href="/entertainment.inc">Shop</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-33 tablet-grid-33 mobile-grid-50 grid-parent">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front face">
+                            <img src="images/homeban-accessories.jpg" />
+                        </div>
+                        <div class="back face">
+                            <a href="/accessories.inc">
+                                <img src="images/homeban-accessories.jpg" />
+                                <p>Accessories<br />
+                                <span>make it your own.</span></p>
+                                <div class="button button-red" href="/accessories.inc">Shop</div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="clear"></div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="home-section" id="in-touch">
-    <div class="home-title">
-        <h1>Keep in Touch</h1>
-    </div>
-    <div class="grid-container">
-        <div class="grid-60 prefix-20 tablet-grid-80 tablet-prefix-10">
-            <p>Don't miss out on our latest events and promotions!<br />Enter your email address below.</p>
-            <div id="email-form">
-                <div id="newsletterbox">
-                    <div id="news-letter-left">
-                        <i class="fa fa-arrow-right fa-2x"></i>
-                        <SubmitForm id="emailsignup" formname="Email Sign Up" inputnameprefix="EmailSignup_" message="Thank you for signing up." />
-                        <label class="hidden" for="SignUpEmailAddress">Email Address</label>
-                        <input class="validate[required,custom[email]]" type="text" id="SignUpEmailAddress" name="EmailSignup_EmailAddress" placeholder="Email Address" />
-                    </div>
-                    <div id="news-letter-right">
-                        <label class="hidden" for="EmailSignup_submit">Submit</label>
-                        <input class="button" name="EmailSignup_submit" id="EmailSignup_submit" type="Submit" value="Sign Up" />
+    <section class="home-section" id="about-us">
+        <div>
+            <div>
+                <div class="home-title">
+                    <h1>Our Company</h1>
+                </div>
+                <div class="grid-container">
+                    <div class="grid-60 prefix-20 tablet-grid-80 tablet-prefix-10">
+                        <div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Dolor morbi non arcu risus quis varius quam. Pulvinar neque laoreet suspendisse interdum. Enim ut sem viverra aliquet eget sit amet tellus. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. Sed felis eget velit aliquet. Dis parturient montes nascetur ridiculus mus mauris vitae. Et tortor at risus viverra adipiscing. Sed felis eget velit aliquet sagittis id consectetur. Facilisi nullam vehicula ipsum a arcu cursus vitae.</p>
+                        </div>
                     </div>
                     <div class="clear"></div>
                 </div>
             </div>
+            <!-- <div class="grid-container">
+                <div class="grid-60 prefix-20 tablet-grid-80 tablet-prefix-10 mobile-grid-90 mobile-prefix-5">
+                    <div id="video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/iR2M37Zih2c?rel=0&amp;controls=0&amp;showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div> -->
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="home-section" id="in-touch">
+        <div class="home-title">
+            <h1>Keep in Touch</h1>
+        </div>
+        <div class="grid-container">
+            <div class="grid-60 prefix-20 tablet-grid-80 tablet-prefix-10">
+                <p>Don't miss out on our latest events and promotions!<br />Enter your email address below.</p>
+                <div id="email-form">
+                    <div id="newsletterbox">
+                        <div id="news-letter-left">
+                            <i class="fa fa-arrow-right fa-2x"></i>
+                            <label class="hidden" for="SignUpEmailAddress">Email Address</label>
+                            <input class="validate[required,custom[email]]" type="text" id="SignUpEmailAddress" name="EmailSignup_EmailAddress" placeholder="Email Address" />
+                        </div>
+                        <div id="news-letter-right">
+                            <label class="hidden" for="EmailSignup_submit">Submit</label>
+                            <input class="button" name="EmailSignup_submit" id="EmailSignup_submit" type="Submit" value="Sign Up" />
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
 <!--  End Homepage  -->
 
 <!-- <include src="includes/footer.inc">Loading...</include> -->

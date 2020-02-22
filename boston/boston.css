@@ -15,15 +15,9 @@ Secondary Color Red Hover --- #FF9292
 
 /*** GLOBAL ***********************************************************/
 
-#HeaderControl1_dynamicHeaderDiv {
-    position: relative;
-    z-index: 1000;
-}
 
-#divworkspacearea {
+main {
     margin: 0 auto;
-    padding: 0 4vw;
-    max-width: 1760px;
     -webkit-transition: margin .3s ease;
     -moz-transition: margin .3s ease;
     -o-transition: margin .3s ease;
@@ -31,30 +25,19 @@ Secondary Color Red Hover --- #FF9292
     transition: margin .3s ease;
 }
 
-.HomePageForm #divworkspacearea {
-    padding: 0 !important;
-    max-width: unset;
-}
-
 .grid-container {
     margin: 0 auto;
-    padding: 0;
+    padding: 0 4vw;
     max-width: 1760px;
 }
 
-#header .grid-container,
-.HomePageForm .grid-container {
-    padding: 0 4vw;
-}
-
 .hidden {
-    display: none;
-}
-
-.fixed {
-    position: fixed !important;
-    top: 0;
-    width: 100%;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, input {
@@ -87,20 +70,11 @@ img {
     margin-top: 25px;
 }
 
-.ItemBrowserPageContainer,
-.ItemInformationContainer {
-    padding: 25px 0;
-}
-
-.LoginPageContainer {
-    margin: 20vh auto 12vh;
-}
-
 /*** END GLOBAL *******************************************************/
 
 /*** HEADER ***********************************************************/
 
-#header,
+header,
 nav,
 footer {
     max-width: 100%;
@@ -112,13 +86,17 @@ footer {
     transition: all .3s ease .15s;
 }
 
-#header {
+header {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #fff;
     box-shadow: 0 -10px 10px 10px rgba(0, 0, 0, .5);
-    z-index: 1;
+    z-index: 150;
+}
+
+#header-container {
+    padding: 0 20px;
 }
 
 #logo img {
@@ -184,10 +162,8 @@ nav a,
     font-weight: 600;
 }
 
-.mega-width {
+#mega-container {
     position: relative;
-    margin: 0 -10px;
-    padding: 0 10px;
     background-color: #fff;
 }
 
@@ -393,6 +369,15 @@ nav a,
     padding: 15px;
     border: 2px solid #D7D7D7;
     border-radius: 20px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#search-left input:focus {
+    border-color: #53C8E6;
 }
 
 #search-right {
@@ -405,11 +390,6 @@ nav a,
     padding: 3px;
     cursor: pointer;
     border-radius: 50px;
-}
-
-#search-right input:hover {
-    color: #fff;
-    background-color: #FF3357;
 }
 
 #slideout-menu {
@@ -553,7 +533,7 @@ nav a,
 .home-section>div:first-child p,
 #in-touch p {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin-bottom: 50px;
 }
 
@@ -574,7 +554,8 @@ nav a,
     transition: all .3s ease;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
     color: #fff;
     background-color: #53C8E6;
 }
@@ -584,15 +565,17 @@ nav a,
     border-color: #FF3357;
 }
 
-.button-red:hover {
+.button-red:hover,
+.button-red:focus {
     color: #fff;
     background-color: #FF3357;
 }
 
 /*** END HOMEPAGE GLOBAL **********************************************/
 
-.home-slideshow {
+#home-slides {
     margin-bottom: 4vw;
+    padding: 0 4vw;
 }
 
 .home-slideshow .owl-dots {
@@ -632,9 +615,9 @@ nav a,
     padding-bottom: 50px;
 }
 
-#home-slider #trending-rotator ul .owl-prev,
+#home-slider #featured-slider ul .owl-prev,
 #home-slider .owl-prev,
-#home-slider #trending-rotator ul .owl-next,
+#home-slider #featured-slider ul .owl-next,
 #home-slider .owl-next {
     color: #53C8E6;
     -webkit-transition: color .3s ease;
@@ -644,9 +627,9 @@ nav a,
     transition: color .3s ease;
 }
 
-#home-slider #trending-rotator ul .owl-prev:hover,
+#home-slider #featured-slider ul .owl-prev:hover,
 #home-slider .owl-prev:hover,
-#home-slider #trending-rotator ul .owl-next:hover,
+#home-slider #featured-slider ul .owl-next:hover,
 #home-slider .owl-next:hover {
     color: #8DE8FF;
 }
@@ -662,75 +645,7 @@ nav a,
 
 /*** END SLIDER SECTION GLOBAL ****************************************/
 
-/*** TRENDING SLIDER **************************************************/
-
-#trending-rotator .owl-carousel .owl-stage {
-    display: flex;
-}
-
-#trending-rotator .owl-carousel .owl-item {
-    flex: 1;
-    padding: 0;
-}
-
-#home-slider #trending-rotator ul .trending-slide a {
-    color: #53C8E6;
-}
-
-#home-slider .trending-slide a::after {
-    display: block;
-    position: absolute;
-    background-color: #fff;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    content: '';
-    opacity: 0;
-    -webkit-transition: opacity .3s ease;
-    -moz-transition: opacity .3s ease;
-    -o-transition: opacity .3s ease;
-    -ms-transition: opacity .3s ease;
-    transition: opacity .3s ease;
-}
-
-#home-slider .trending-slide a:hover::after {
-    opacity: .25;
-}
-
-#home-slider .trending-slide a:hover img {
-    opacity: 1;
-}
-
-#home-slider .trending-slide p {
-    margin: 0;
-    padding-top: 10px;
-    font-size: 1.15em;
-    font-weight: 600;
-}
-
-#trending-rotator ul .trending-slide p span {
-    font-size: .6em;
-    font-weight: 400;
-    color: #222;
-}
-
-#home-slider #trending-rotator ul .owl-prev,
-#home-slider #trending-rotator ul .owl-next {
-    font-size: 1.15em;
-}
-
-#home-slider #trending-rotator ul .owl-prev {
-    left: -65px;
-}
-
-#home-slider #trending-rotator ul .owl-next {
-    right: -65px;
-}
-
-/*** END TRENDING SLIDER **********************************************/
-
-/*** FEATURED SLIDER *****************************************************/
+/*** FEATURED SLIDER **************************************************/
 
 .featured-slider {
     padding: 0 40px;
@@ -810,7 +725,7 @@ nav a,
     right: -40px;
 }
 
-/*** END FEATURED SLIDER **************************************************/
+/*** END FEATURED SLIDER ***********************************************/
 
 /*** HOME BANNERS ******************************************************/
 
@@ -967,6 +882,15 @@ nav a,
     border: none;
     border-bottom: 2px dotted #999;
     color: #222;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#news-letter-left input:focus {
+    border-color: #FF3357;
 }
 
 #news-letter-right {
@@ -975,6 +899,7 @@ nav a,
 
 #news-letter-right input {
     cursor: pointer;
+    border-radius: 50px;
 }
 
 /*** END KEEP IN TOUCH ************************************************/
@@ -1158,14 +1083,18 @@ footer a:hover {
 
 @media screen and (max-width: 1024px) {
 
-    .HomePageForm .grid-container {
+    /*.HomePageForm .grid-container {
+        padding: 0;
+    }*/
+
+    .grid-container {
         padding: 0;
     }
 
     #main-nav>li>a {
         padding: 20px 0;
         text-align: center;
-        font-size: .9em;
+        font-size: .8em;
         font-weight: 700;
         color: #FF3357;
     }
@@ -1184,19 +1113,20 @@ footer a:hover {
         padding: 2px 5px;
     }
 
-    .home-slideshow {
-        margin-bottom: 0;
+    #home-slides {
+        margin: 0;
+        padding: 0;
     }
 
-    #home-slider #trending-rotator ul {
+    #home-slider #featured-slider ul {
         width: 85%;
     }
 
-    #home-slider #trending-rotator ul .owl-prev {
+    #home-slider #featured-slider ul .owl-prev {
         left: -45px;
     }
 
-    #home-slider #trending-rotator ul .owl-next {
+    #home-slider #featured-slider ul .owl-next {
         right: -45px;
     }
 
@@ -1223,8 +1153,8 @@ footer a:hover {
 
 @media screen and (max-width: 767px) {
 
-    #header {
-        position: static;
+    header {
+        position: relative;
     }
 
     #search-bar {
@@ -1269,8 +1199,8 @@ footer a:hover {
         font-size: 1.25em;
     }
 
-    #home-slider #trending-rotator ul .owl-prev,
-    #home-slider #trending-rotator ul .owl-next {
+    #home-slider #featured-slider ul .owl-prev,
+    #home-slider #featured-slider ul .owl-next {
         font-size: 1em;
     }
 
@@ -1335,7 +1265,7 @@ footer a:hover {
         font-size: 1em;
     }
 
-    #home-slider #trending-rotator ul .trending-slide a {
+    #home-slider #featured-slider ul .trending-slide a {
         font-size: 1em;
     }
 }

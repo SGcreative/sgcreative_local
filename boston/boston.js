@@ -256,13 +256,13 @@ $(document).ready(function() {
 
     // Fixed Header --
     function headerSpace() {
-        var headerHeight = $('#header').height() + 'px';
+        var headerHeight = $('header').height() + 'px';
 
         if ($(window).width() > 767) {
-            $('#divworkspacearea').css('margin-top', headerHeight)
+            $('main').css('margin-top', headerHeight)
         }
         else {
-            $('#divworkspacearea').css('margin-top', 'inherit')
+            $('main').css('margin-top', 'inherit')
         }
     };
 
@@ -315,13 +315,13 @@ $(document).ready(function() {
             $('.dropdown-open').removeClass('dropdown-open');
             $(this).parent('li').addClass('dropdown-open');
             if ($(this).hasClass('search-toggle')) {
-                $('#SearchValue').focus();
+                $('#search-bar input[type="text"]').focus();
             }
         }
     });
 
     if ($('.dropdown-open')) {
-        $('.workspacearea').on('click', function() {
+        $('main').on('click', function() {
             $('.dropdown-open').removeClass('dropdown-open');
         });
     }
