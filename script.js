@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.percent-bars p').addClass('before-animate');
+    $('.percent-bars p').addClass('collapsed');
 });
 
 $(window).on('load, resize, scroll', function() {
@@ -15,7 +15,7 @@ $(window).on('load, resize, scroll', function() {
     });
 
     if (scrollLow > $('.percent-bars').offset().top) {
-        $('.percent-bars p').removeClass('before-animate');
+        $('.percent-bars p').removeClass('collapsed');
     }
 
 });

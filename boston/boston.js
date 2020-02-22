@@ -8,81 +8,20 @@ $('include').each(function() {
     });
 });
 
-$(document).ready(function() {
-
-    // Duplicate Cart Quantity --
-    // $('.cart-qty').text($('.cartSummary_Quantity').text());
-
-    // FIXED HEADER NAVIGATION --
-    function fixedHeader() {
-        var y = window.pageYOffset;
-        var pxDown = ($('#top-header').height());
-        var stickyNav = $('#sticky-header');
-        var cssPxDown = pxDown + "px";
-
-        $('#sticky-header').show();
-
-        if (y > pxDown && $(window).width() >= 1440) {
-            stickyNav.addClass('fixed');
-        } else {
-            stickyNav.removeClass('fixed');
-            stickyNav.css('top', cssPxDown);
-        }
-
-        if (window.location.pathname !== '/') {
-            var cssPagePxDown = (pxDown + ($('#sticky-header').height())) + 20 + "px";
-            var refinePxDown = (pxDown - 10) + "px";
-            var refineSearch = $('.ItemBrowserPageContainer .AttributeFilter');
-
-            if (y > pxDown && $(window).width() >= 1440 && $('.ItemBrowserPageContainer .AttributeFilter').length) {
-                if (refineSearch.css('position').toLowerCase() == 'fixed') {
-                    refineSearch.css('margin-top', refinePxDown);
-                } else {
-                    refineSearch.css('margin-top', '0');
-                }
-            } else {
-                refineSearch.css('margin-top', '0');
-            }
-
-            if ($(window).width() >= 768) {
-                $('#divworkspacearea').css('padding-top', cssPagePxDown);
-            } else {
-                $('#divworkspacearea').css('padding-top', '25px');
-            }
-        } else {
-            $('#divworkspacearea').css('padding-top', '0');
-        }
-    }
-
-    fixedHeader();
-
-    $(window).on('load', function() {
-        fixedHeader();
-    });
-
-    $(window).on('scroll', function() {
-        fixedHeader();
-    });
-
-    $(window).on("resize", function() {
-        fixedHeader();
-    });
-});
-
 // MOBILE MENU FUNCTION ---
 $(document).ready(function() {
 
     // Variables
-    var slideoutMenu = $('.slideout-menu'); // Slideout menu container
+    var slideoutMenu = $('#slideout-menu'); // Slideout menu container
     var menuToggle = $('.slideout-menu-toggle'); // Menu open/close link
-    var menuSide = "left"; // Side that the menu slides out from
+    var menuSide = "right"; // Side that the menu slides out from
     var expandable = $('.expandable'); // Expandable sub-menu parent li
     var slideIn = $('.slide-in'); // Slide-in sub-menu parent li
     var expandIcon = "<span class=\"menu-indicator\">+</span>"; // Expandable sub-menu indicator (click to open)
-    var contractIcon = "<span class=\"menu-indicator\">-</span>"; // Expandable sub-menu indicator (click to close)
-    var slideCloseText = "<i class=\"fa fa-angle-left\" style=\"position:static;\"></i>&ensp;Back"; // Slide-in sub-menu close link
-    var searchBox = $('#search-bar'); // Search box container
-    var searchToggle = $('.opensearch'); // Search box open/close link
+    var contractIcon = "<span class=\"menu-indicator\" style=\"color:#FF3357;\">-</span>"; // Expandable sub-menu indicator (click to close)
+    var slideCloseText = "<i class=\"fa fa-arrow-left\" style=\"position:static;color:#FF3357;\"></i> Back"; // Slide-in sub-menu close link
+    var searchBox = "" // Search box container
+    var searchToggle = "" // Search box open/close link
 
     // Determine the menu width & height
     var menuWidth = $(slideoutMenu).width();
@@ -95,7 +34,8 @@ $(document).ready(function() {
     // Position the menu
     if (menuSide === "top") {
         $(slideoutMenu).css(menuSide, -menuHeight);
-    } else {
+    }
+    else {
         $(slideoutMenu).css(menuSide, -menuWidth);
     }
 
@@ -110,7 +50,8 @@ $(document).ready(function() {
     // Determine if search box exists
     if (searchBox == null || searchBox == "" || searchToggle == null || searchToggle == "") {
         search = false;
-    } else {
+    }
+    else {
         search = true;
     }
 
@@ -125,14 +66,16 @@ $(document).ready(function() {
                 }, function() {
                     $(this).hide();
                 });
-            } else if (menuSide === "top") {
+            }
+            else if (menuSide === "top") {
                 slideoutMenu.removeClass("open").animate({
                     scrollTop: 0,
                     top: -menuHeight,
                 }, function() {
                     $(this).hide();
                 });
-            } else {
+            }
+            else {
                 slideoutMenu.removeClass("open").animate({
                     scrollTop: 0,
                     left: -menuWidth,
@@ -140,30 +83,32 @@ $(document).ready(function() {
                     $(this).hide();
                 });
             }
-            disableBodyScroll();
-        } else {
+        }
+        else {
             if (menuSide === "right") {
                 slideoutMenu.show();
                 slideoutMenu.animate({
                     right: "0px"
                 }).addClass("open");
-            } else if (menuSide === "top") {
+            }
+            else if (menuSide === "top") {
                 slideoutMenu.show();
                 slideoutMenu.animate({
                     top: "0px"
                 }).addClass("open");
-            } else {
+            }
+            else {
                 slideoutMenu.show();
                 slideoutMenu.animate({
                     left: "0px"
                 }).addClass("open");
             }
-            disableBodyScroll();
         }
     };
 
     // Menu toggle
     $(menuToggle).on('click', function(event) {
+        $('.dropdown-open').removeClass('dropdown-open');
         if (search === true) {
             if (searchBox.hasClass("open")) {
                 searchBox.toggleClass("open");
@@ -188,18 +133,22 @@ $(document).ready(function() {
         }
     };
 
-    $('#divworkspacearea').on('click', function(event) {
-        closeMenu();
-    });
-
     // Click anywhere
     $('html').click(function() {
         closeMenu();
     });
 
-    // Except on the menu container, menu toggle, search container, search toggle
-    $(menuToggle).add(slideoutMenu).add(searchToggle).add(searchBox).click(function(event) {
+    // Except on the menu or toggle button
+    $(menuToggle).add(slideoutMenu).click(function(event) {
         event.stopPropagation();
+    });
+
+    // Close menu when navigating to anchor on current page
+    $('#slideout-menu a[href*="#"]').on('click', function() {
+        var newUrl = $(this).attr('href').split("#")[0];
+            if(window.location.href.toLowerCase().indexOf(newUrl.toLowerCase()) > -1) {
+            slideoutMenuAction();
+        }
     });
 
     // EXPANDABLE SUB MENUS ---
@@ -216,43 +165,35 @@ $(document).ready(function() {
     function subMenuClose(el) {
         if ($(el).hasClass("open")) {
             return;
-        } else if ($(slideIn).children('ul').hasClass("open")) {
+        }
+        else if ($(slideIn).children('ul').hasClass("open")) {
             $(slideIn).children('.open').removeClass("open").animate({
                 left: "100%"
             }, 250, function() {
                 $(this).hide();
             });
-        } else {
-            var openMenu = $(expandable).children('.open');
+        }
+        else {
+        var openMenu = $(expandable).children('.open');
             $(openMenu).next('ul').slideToggle();
             $(openMenu).removeClass("open");
             $(openMenu).children('span').toggleText(expandIcon, contractIcon);
         }
     };
 
-    $(window).on('resize', function() {
-        disableBodyScroll();
-    });
-
-    function disableBodyScroll() {
-        if (slideoutMenu.hasClass("open")) {
-            $('body').css('overflow', 'hidden');
-        } else {
-            $('body').css('overflow', 'auto');
-        }
-    };
-
     // Toggle expand/contract icon
-    jQuery.fn.extend({
-        toggleText: function(a, b) {
+    jQuery.fn.extend( {
+        toggleText: function (a, b) {
             var TheIcon = this;
-            if (TheIcon.html() != a && TheIcon.html() != b) {
-                TheIcon.html(a);
-            } else if (TheIcon.html() == a) {
-                TheIcon.html(b);
-            } else if (TheIcon.html() == b) {
-                TheIcon.html(a);
-            }
+                if (TheIcon.html() != a && TheIcon.html() != b){
+                    TheIcon.html(a);
+                }
+                else if (TheIcon.html() == a){
+                    TheIcon.html(b);
+                }
+                else if (TheIcon.html() == b){
+                    TheIcon.html(a);
+                }
             return this;
         }
     });
@@ -271,14 +212,15 @@ $(document).ready(function() {
             }, function() {
                 $(this).hide();
             });
-        } else {
+        }
+        else {
             subMenuClose();
             $(slideoutMenu).animate({
                 scrollTop: 0
-            })
+            });
             $(el).addClass("open").show().animate({
                 left: "0%"
-            })
+            });
         }
     };
 
@@ -302,24 +244,39 @@ $(document).ready(function() {
             }
             searchBox.toggleClass("open");
             searchBox.slideToggle();
-            if (searchBox.hasClass("open")) {
-                $('#search-bar input[type="text"]').focus();
-            }
         });
     }
+
 });
 
 $(document).ready(function() {
 
-    // START SHOPPING SCROLL DOWN --
-    $('#scroll-down a').click(function() {
-        $('html, body').animate({ scrollTop: $('#browse-rooms').offset().top }, 800);
+    // Duplicate Cart Quantity --
+    // $('.cart-qty').text($('.cartSummary_Quantity').text());
+
+    // Fixed Header --
+    function headerSpace() {
+        var headerHeight = $('#header').height() + 'px';
+
+        if ($(window).width() > 767) {
+            $('#divworkspacearea').css('margin-top', headerHeight)
+        }
+        else {
+            $('#divworkspacearea').css('margin-top', 'inherit')
+        }
+    };
+
+    $(window).on('load', function() {
+        headerSpace();
     });
 
-    // FOOTER SOCIAL ICONS BACKGROUND (not homepage) --
-    // if (window.location.pathname != '/') {
-    //     $('.footer-social').css('background-color', '#fff');
-    // }
+    $(window).on('scroll', function() {
+        headerSpace();
+    });
+
+    $(window).on("resize", function() {
+        headerSpace();
+    });
 
     // BRANDS LIST EXPANSION BASED ON COUNT --
     var totalItems = $('.footer-column ul li').length;
@@ -334,20 +291,39 @@ $(document).ready(function() {
         $('#FooterBrands').append('<li><a href="javascript:void(0);" onclick="$(\'.additional-brands\').slideToggle(); $(\'.more-brands\').toggle(); $(\'html, body\').animate({ scrollTop: $(document).height() }, \'slow\');"><span class="more-brands">VIEW MORE +</span><span class="more-brands" style="display:none;">VIEW LESS -</span></a></li>');
     };
 
-    // SCROLL TO TOP --
-    // Check to see if the window is top if not then display button
+    //SCROLL TO TOP --
+    //Check to see if the window is top if not then display button
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
+        if ($(this).scrollTop() > 60) {
             $('.scrolltotop').fadeIn();
         } else {
             $('.scrolltotop').fadeOut();
         }
     });
 
-    // Click event to scroll to top
+    //Click event to scroll to top
     $('.scrolltotop').click(function() {
         $('html, body').animate({ scrollTop: 0 }, 800);
         return false;
     });
+
+    // Dropdown Menus Toggle
+    $('.dropdown-toggle').on('click', function() {
+        if ($(this).parent('li').hasClass('dropdown-open')) {
+            $(this).parent('li').removeClass('dropdown-open');
+        } else {
+            $('.dropdown-open').removeClass('dropdown-open');
+            $(this).parent('li').addClass('dropdown-open');
+            if ($(this).hasClass('search-toggle')) {
+                $('#SearchValue').focus();
+            }
+        }
+    });
+
+    if ($('.dropdown-open')) {
+        $('.workspacearea').on('click', function() {
+            $('.dropdown-open').removeClass('dropdown-open');
+        });
+    }
 
 });

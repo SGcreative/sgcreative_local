@@ -28,6 +28,11 @@ img {
     outline: none;
 }
 
+input:not([type="radio"]):not([type="checkbox"]) {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
 .hidden {
     display: none;
 }
@@ -404,7 +409,7 @@ main h1 span::after {
 	width: 50%;
 }
 
-.percent-bars .before-animate {
+.percent-bars .collapsed {
 	width: 44px !important;
 }
 
