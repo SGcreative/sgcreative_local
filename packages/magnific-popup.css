@@ -448,3 +448,64 @@ screen and (max-height: 300px) {
         padding-right: 6px;
     }
 }
+
+/*** Customizations ***/
+.mfp-content {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    max-width: 720px;
+    max-height: 300px;
+    background-color: #fff;
+    font-family: "Rubik", sans-serif;
+}
+
+.mfp-content div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mfp-content p {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.mfp-content i {
+    margin-bottom: 20px;
+    color: #22496e;
+}
+
+.mfp-content .progress-bar {
+    display: block;
+    top: unset;
+}
+
+.mfp-content .progress-bar p {
+    text-align: left;
+    font-size: .85rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 5px 10px;
+}
+
+.mfp-content .progress-bar span {
+    display: block;
+    box-sizing: border-box;
+    height: 5px;
+    width: 0;
+    background-color: #22496e;
+    -webkit-transition: width 3.75s linear;
+    -moz-transition: width 3.75s linear;
+    -o-transition: width 3.75s linear;
+    -ms-transition: width 3.75s linear;
+    transition: width 3.75s linear;
+}
+
+.mfp-content .progress-bar span.active {
+    width: 100%;
+}

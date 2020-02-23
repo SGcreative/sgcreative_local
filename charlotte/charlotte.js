@@ -10,6 +10,20 @@ $('include').each(function() {
 
 $(document).ready(function() {
 
+    $('.ajax-popup').magnificPopup({
+        type: 'ajax',
+        callbacks: {
+            open: function() {
+                setTimeout(function() {
+                    $('.progress-bar span').addClass('active');
+                }, 100);
+                setTimeout(function() {
+                    $('.ajax-popup').magnificPopup('close');
+                }, 4000);
+            }
+        }
+    });
+
     // Duplicate Cart Quantity --
     // $('.cart-qty').text($('.cartSummary_Quantity').text());
 
