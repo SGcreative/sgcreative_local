@@ -188,10 +188,6 @@ $(document).ready(function() {
         }
     };
 
-    $('#divworkspacearea').on('click', function(event) {
-        closeMenu();
-    });
-
     // Click anywhere
     $('html').click(function() {
         closeMenu();

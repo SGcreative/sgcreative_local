@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex,nofollow">
     <title>Savannah Theme</title>
     <script src="../packages/jquery-3.3.1.min.js"></script>
 	<script src="../packages/owl.carousel.min.js"></script>
 	<script src="../packages/jquery.magnific-popup.min.js"></script>
-	<script src="savannah.js"></script>
+	<script defer src="savannah.js"></script>
     <link rel="stylesheet" href="../packages/unsematnic-grid.css" />
     <link rel="stylesheet" href="../packages/owl.carousel.min.css">
 	<link rel="stylesheet" href="../packages/owl.theme.default.min.css">
 	<link rel="stylesheet" href="../packages/magnific-popup.css" />
     <link rel="stylesheet" href="savannah.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
 </head>
 
 <body id="home-page">
@@ -24,17 +25,656 @@
 <!-- <include src="includes/header.inc">Loading...</include> -->
 
 <!-- Header  -->
+<header>
+    <div id="header-left">
+        <div id="menu-toggle" class="slideout-menu-toggle">
+            <a href="javascript:void(0)" aria-haspopup="true">
+                <div aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+        </div>
+        <div id="logo">
+            <a href="/"><img src="images/logo.png" alt="METADATA COMPANY" width="154" height="30" /></a>
+        </div>
+        <div class="search">
+            <label class="hidden" for="SearchValue">Search Keyword</label>
+            <input type="text" id="SearchValue" name="SearchValue" onkeypress="submitsearch(event);" value="" placeholder="SEARCH" tabindex="1" />
+            <a href="javascript:void(0)" onClick="goSearch();" tabindex="2"><i class="fa fa-search fa-lg" aria-hidden="true"></i><span class="hidden">Search</span></a>
+        </div>
+    </div>
+    <div id="header-right">
+        <ul>
+            <li><a href="tel:+1-888-888-8888">888.888.8888</a></li>
+            <li><a href="/favorites.aspx" rel="nofollow">
+                <i class="fa fa-heart fa-lg"></i><br />Favorites
+                </a>
+            </li>
+            <li class="sub-nav">
+                <a href="/viewcart.aspx" rel="nofollow">
+                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i><br />cart (<viewCartQuantitySummary></viewCartQuantitySummary>)</span>
+                </a>
+                <div>
+                    <ul>
+                        <p class="heading">Cart Summary</p>
+                        <viewCartSummary></viewCartSummary>
+                    </ul>
+                </div>
+            </li>
+            <li class="sub-nav">
+                <a href="/modifyaccount.aspx">
+                    <i class="fa fa-user fa-lg" aria-hidden="true"></i><br />account
+                </a>
+                <div>
+                    <ul>
+                        <li id="login"><a href="/login.aspx" rel="nofollow"><i class="fa fa-angle-right fa-lg" aria-hidden="true"></i> Login</a></li>
+                        <li id="viewAccountLink" style="display: none;"><a href="/modifyaccount.aspx" rel="nofollow"><i class="fa fa-angle-right fa-lg" aria-hidden="true"></i> View Account</a></li>
+                        <li id="logoutLink" style="display: none;"><a href="/homepage.aspx?logout=true" rel="nofollow"><i class="fa fa-angle-right fa-lg" aria-hidden="true"></i> Logout</a></li>
+                        <li id="registerlink"><a href="/createaccount.aspx" rel="nofollow"><i class="fa fa-angle-right fa-lg" aria-hidden="true"></i> Register</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</header>
 
+<div id="loggedinas" style="display: none; visibility: hidden"></div>
+
+<nav class="slideout-menu">
+    <div class="mobile-options mobile-icons">
+        <a href="tel:+1-888-888-8888"><i class="fa fa-phone fa-lg" aria-hidden="true"></i><span class="hidden">Phone</span></a>
+        <a href="https://www.google.com/maps" target="_blank"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i><span class="hidden">Location</span></a>
+        <a href="/ViewCart.aspx" rel="nofollow"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i> (<span class="cart-qty">0</span>)</a>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-heading">
+            <p>Departments</p>
+            <button class="slideout-menu-toggle" aria-hidden="true" onclick="event.preventDefault()">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve">
+                    <g>
+                        <line class="st0" x1="1.27" y1="1.27" x2="24.73" y2="24.73"/>
+                        <line class="st0" x1="24.73" y1="1.27" x2="1.27" y2="24.73"/>
+                    </g>
+                </svg>
+            </button>
+        </div>
+        <ul>
+            <li class="slide-in"><a href="javascript:void(0)"><span>Living Room</span></a>
+                <div class="slide-in-menu">
+                    <div class="menu-heading">
+                        <p>Living Room</p>
+                        <button class="slide-in-back" onclick="event.preventDefault()">
+                            <span class="hidden">Main Menu</span>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve" aria-hidden="true">
+                                <g>
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="24.73" />
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="1.27" />
+                                    <line class="st0" x1="24.74" y1="13" x2="1.27" y2="13" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul>
+                        <li><a href="#"><span>Sofas</span></a></li>
+                        <li><a href="#"><span>Sectionals</span></a></li>
+                        <li><a href="#"><span>Recliners</span></a></li>
+                        <li><a href="#"><span>Chairs</span></a></li>
+                        <li><a href="#"><span>Loveseats</span></a></li>
+                        <li><a href="#"><span>Chaises</span></a></li>
+                        <li><a href="#"><span>Settees</span></a></li>
+                        <li><a href="#"><span>Benches</span></a></li>
+                        <li><a href="#"><span>Ottomans</span></a></li>
+                        <li><a href="#"><span>Coffee Tables</span></a></li>
+                        <li><a href="#"><span>End Tables</span></a></li>
+                        <li><a href="#"><span>Chests</span></a></li>
+                        <li><a href="#"><span>Cabinets</span></a></li>
+                        <li><a href="#"><span>Consoles</span></a></li>
+                        <li><a href="#"><span>Bookcases</span></a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="slide-in"><a href="javascript:void(0)"><span>Dining Room</span></a>
+                <div class="slide-in-menu">
+                    <div class="menu-heading">
+                        <p>Dining Room</p>
+                        <button class="slide-in-back" onclick="event.preventDefault()">
+                            <span class="hidden">Main Menu</span>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve" aria-hidden="true">
+                                <g>
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="24.73" />
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="1.27" />
+                                    <line class="st0" x1="24.74" y1="13" x2="1.27" y2="13" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul>
+                        <li><a href="#">Dining Sets</a></li>
+                        <li><a href="#">Formal Sets</a></li>
+                        <li><a href="#">Bistro Sets</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">Chairs</a></li>
+                        <li><a href="#">Benches</a></li>
+                        <li><a href="#">Bar Stools</a></li>
+                        <li><a href="#">Cabinets &amp; Hutches</a></li>
+                        <li><a href="#">Buffets</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="slide-in"><a href="javascript:void(0)"><span>Bedroom</span></a>
+                <div class="slide-in-menu">
+                    <div class="menu-heading">
+                        <p>Bedroom</p>
+                        <button class="slide-in-back" onclick="event.preventDefault()">
+                            <span class="hidden">Main Menu</span>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve" aria-hidden="true">
+                                <g>
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="24.73" />
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="1.27" />
+                                    <line class="st0" x1="24.74" y1="13" x2="1.27" y2="13" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul>
+                        <li><a href="#">Master Bedroom Sets</a></li>
+                        <li><a href="#">Youth Bedroom Sets</a></li>
+                        <li><a href="#">Beds</a></li>
+                        <li><a href="#">Nightstands</a></li>
+                        <li><a href="#">Dressers</a></li>
+                        <li><a href="#">Wardrobes</a></li>
+                        <li><a href="#">Trunks &amp; Chests</a></li>
+                        <li><a href="#">Bedding</a></li>
+                        <li><a href="#">Mattresses</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="slide-in"><a href="javascript:void(0)"><span>Home Office</span></a>
+                <div class="slide-in-menu">
+                    <div class="menu-heading">
+                        <p>Home Office</p>
+                        <button class="slide-in-back" onclick="event.preventDefault()">
+                            <span class="hidden">Main Menu</span>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve" aria-hidden="true">
+                                <g>
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="24.73" />
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="1.27" />
+                                    <line class="st0" x1="24.74" y1="13" x2="1.27" y2="13" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul>
+                        <li><a href="#">Desks</a></li>
+                        <li><a href="#">Chairs</a></li>
+                        <li><a href="#">Tables</a></li>
+                        <li><a href="#">File Cabinets</a></li>
+                        <li><a href="#">Bookcases</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="slide-in"><a href="javascript:void(0)"><span>Entertainment</span></a>
+                <div class="slide-in-menu">
+                    <div class="menu-heading">
+                        <p>Entertainment</p>
+                        <button class="slide-in-back" onclick="event.preventDefault()">
+                            <span class="hidden">Main Menu</span>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve" aria-hidden="true">
+                                <g>
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="24.73" />
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="1.27" />
+                                    <line class="st0" x1="24.74" y1="13" x2="1.27" y2="13" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul>
+                        <li><a href="#">Entertainment Centers</a></li>
+                        <li><a href="#">TV Stands</a></li>
+                        <li><a href="#">A/V Cabinets</a></li>
+                        <li><a href="#">Media Cabinets</a></li>
+                        <li><a href="#">Home Theater Seating</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="slide-in"><a href="javascript:void(0)"><span>Accessories</span></a>
+                <div class="slide-in-menu">
+                    <div class="menu-heading">
+                        <p>Accessories</p>
+                        <button class="slide-in-back" onclick="event.preventDefault()">
+                            <span class="hidden">Main Menu</span>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" xml:space="preserve" aria-hidden="true">
+                                <g>
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="24.73" />
+                                    <line class="st0" x1="1.27" y1="13" x2="13" y2="1.27" />
+                                    <line class="st0" x1="24.74" y1="13" x2="1.27" y2="13" />
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                    <ul>
+                        <li><a href="#">Accent Chairs</a></li>
+                        <li><a href="#">Accent Tables</a></li>
+                        <li><a href="#">Lamps</a></li>
+                        <li><a href="#">Mirrors</a></li>
+                        <li><a href="#">Clocks</a></li>
+                        <li><a href="#">Wall Art</a></li>
+                        <li><a href="#">Accent Pieces</a></li>
+                        <li><a href="#">Fireplaces</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><a href="/mattresses/"><span>Mattresses</a></span></li>
+
+        </ul>
+        <div class="mobile-options">
+            <div class="menu-heading">
+                <p>Quick Links</p>
+            </div>
+            <ul>
+                <li><a href="/displayflyer.aspx"><span>Current Promotions</span></a></li>
+                <li><a href="/design-center.inc"><span>Design Center</span></a></li>
+                <li><a href="/room-planner.inc"><span>Room Planner</span></a></li>
+                <li><a href="/brands.inc"><span>Our Brands</span></a></li>
+                <li><a href="/about-us.inc"><span>About Us</span></a></li>
+                <li><a href="/contact-us.inc"><span>Contact Us</span></a></li>
+            </ul>
+            <div class="menu-heading">
+                <p>My Account</p>
+            </div>
+            <ul id="slideout-account">
+                <li id="login2"><a href="/login.aspx" rel="nofollow"><span>Login</span></a></li>
+                <li id="viewAccountLink2" style="display: none;"><a href="/modifyaccount.aspx" rel="nofollow"><span>View Account</span></a></li>
+                <li id="logoutLink2" style="display: none;"><a href="homepage.aspx?logout=true" rel="nofollow"><span>Logout</span></a></li>
+                <li id="registerlink2"><a href="/createaccount.aspx" rel="nofollow"><span>Register</span></a></li>
+                <li><a href="/favorites.aspx" rel="nofollow"><span>Favorites</span></a></li>
+            </ul>
+        </div>
+        <div class="mobile-options mobile-icons">
+            <a href="#" target="_blank"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i><span class="hidden">Facebook</span></a>
+            <a href="#" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i><span class="hidden">Instagram</span></a>
+            <a href="#" target="_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i><span class="hidden">Twitter</span></a>
+            <a href="#" target="_blank"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i><span class="hidden">Pinterest</span></a>
+        </div>
+    </div>
+</nav>
 <!--  End Header -->
 
 <!--  Homepage  -->
+<main id="homepage">
+    <div id="home-slideshow" class="owl-carousel owl-theme">
+        <img src="images/slideshow/homeslide-01.jpg" width="1920" height="560" alt="Furniture" />
+        <img src="images/slideshow/homeslide-02.jpg" width="1920" height="560" alt="Furniture" />
+        <img src="images/slideshow/homeslide-03.jpg" width="1920" height="560" alt="Furniture" />
+    </div>
 
+    <script>
+        $('#home-slideshow').owlCarousel({
+            autoplay: true,
+            loop: true,
+            dots: true,
+            items: 1
+            // responsive:{
+            //     0:{
+            //         items:1
+            //     },
+            //     600:{
+            //         items:3
+            //     },
+            //     1000:{
+            //         items:5
+            //     }
+            // }
+        });
+    </script>
+
+    <div class="grid-container">
+        <section id="category-tiles">
+            <div class="category-tile tile-full-left promo-tile">
+                <a href="/about-us.inc"><span class="hidden">About Us</span></a>
+
+                <div class="promo-content">
+                    <h3>Mix -n- Match Sale</h3>
+                    <p>Buy two coordinating pieces, get a third for FREE... and, did we mention FREE shipping! Hurry, the Mix -n- Match sale at METADATA COMPANY in METADATA CITY, METADATA STATE ends soon.</p>
+                    <div class="button">
+                        <a href="/displayflyer.aspx">Shop Now</a>
+                    </div>
+                </div>
+
+                <div class="category-image">
+                    <a href="/about-us.inc" title="About Us">
+                        <img src="images/tile-promo-top.jpg" style="object-position:middle" width="725" height="400" alt="METADATA COMPANY" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-tile tile-full-right promo-tile">
+                <a href="/financing.inc"><span class="hidden">Apply Now</span></a>
+
+                <div class="category-image">
+                    <a href="/about-us.inc" title="About Us">
+                        <img src="images/tile-promo-middle.jpg" style="object-position:middle" width="725" height="350" alt="Financing Options" />
+                    </a>
+                </div>
+
+                <div class="promo-content">
+                    <h3>Easy Financing Options Available</h3>
+                    <p>At METADATA COMPANY in METADATA CITY, METADATA STATE, we offer several financing options so you can bring home the furniture you love today! Apply online and start shopping today.</p>
+                    <div class="button">
+                        <a href="/financing.inc">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-title">
+                <h2>Shop by Room</h2>
+                <p>&amp; Category</p>
+            </div>
+
+            <div class="category-tile tile-full-left">
+                <a href="/living-room.inc"><span class="hidden">Living Room</span></a>
+
+                <div class="category-image">
+                    <a href="/living-room.inc" title="Shop Living Room">
+                        <img src="images/tile-living.jpg" width="1165" height="583" alt="Living Room" />
+                    </a>
+                </div>
+
+                <div class="category-list">
+                    <h3><a href="/living-room.inc">Living Room <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a></h3>
+                    <ul class="two-col-list">
+                        <li><a href="#"><span>Sofas</span></a></li>
+                        <li><a href="#"><span>Sectionals</span></a></li>
+                        <li><a href="#"><span>Recliners</span></a></li>
+                        <li><a href="#"><span>Chairs</span></a></li>
+                        <li><a href="#"><span>Loveseats</span></a></li>
+                        <li><a href="#"><span>Chaises</span></a></li>
+                        <li><a href="#"><span>Settees</span></a></li>
+                        <li><a href="#"><span>Benches</span></a></li>
+                        <li><a href="#"><span>Ottomans</span></a></li>
+                        <li><a href="#"><span>Coffee Tables</span></a></li>
+                        <li><a href="#"><span>End Tables</span></a></li>
+                        <li><a href="#"><span>Chests</span></a></li>
+                        <li><a href="#"><span>Cabinets</span></a></li>
+                        <li><a href="#"><span>Consoles</span></a></li>
+                        <li><a href="#"><span>Bookcases</span></a></li>
+                        <li><a href="#"><span>Category</span></a></li>
+                        <li><a href="#"><span>Category</span></a></li>
+                        <li><a href="#"><span>Category</span></a></li>
+                        <li><a href="#"><span>Category</span></a></li>
+                        <li><a href="#"><span>Category</span></a></li>
+                    </ul>
+                    <div>
+                        <p>furniture</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-tile tile-half-left">
+                <a href="/dining-room.inc"><span class="hidden">Dining Room</span></a>
+                <div class="category-list">
+                    <h3><a href="/dining-room.inc">Dining Room <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a></h3>
+                    <ul>
+                        <li><a href="#"><span>Dining Sets</span></a></li>
+                        <li><a href="#"><span>Formal Sets</span></a></li>
+                        <li><a href="#"><span>Bistro Sets</span></a></li>
+                        <li><a href="#"><span>Tables</span></a></li>
+                        <li><a href="#"><span>Chairs</span></a></li>
+                        <li><a href="#"><span>Benches</span></a></li>
+                        <li><a href="#"><span>Bar Stools</span></a></li>
+                        <li><a href="#"><span>Cabinets &amp; Hutches</span></a></li>
+                        <li><a href="#"><span>Buffets</span></a></li>
+                    </ul>
+                    <div>
+                        <p>furniture</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="category-image">
+                    <a href="/dining-room.inc" title="Shop Dining Room">
+                        <img src="images/tile-dining.jpg" width="506" height="506" alt="Dining Room" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-tile tile-half-left">
+                <a href="/bedroom.inc"><span class="hidden">Bedroom</span></a>
+                <div class="category-list">
+                    <h3><a href="/bedroom.inc">Bedroom <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a></h3>
+                    <ul>
+                        <li><a href="#"><span>Master Bedroom Sets</span></a></li>
+                        <li><a href="#"><span>Youth Bedroom Sets</span></a></li>
+                        <li><a href="#"><span>Beds</span></a></li>
+                        <li><a href="#"><span>Nightstands</span></a></li>
+                        <li><a href="#"><span>Dressers</span></a></li>
+                        <li><a href="#"><span>Wardrobes</span></a></li>
+                        <li><a href="#"><span>Trunks &amp; Chests</span></a></li>
+                        <li><a href="#"><span>Bedding</span></a></li>
+                        <li><a href="#"><span>Mattresses</span></a></li>
+                    </ul>
+                    <div>
+                        <p>furniture</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="category-image">
+                    <a href="/bedroom.inc" title="Shop Bedroom">
+                        <img src="images/tile-bedroom.jpg" width="506" height="506" alt="Bedroom" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-tile tile-half-right">
+                <a href="/home-office.inc"><span class="hidden">Home Office</span></a>
+                <div class="category-image">
+                    <a href="/home-office.inc" title="Shop Home Office">
+                        <img src="images/tile-office.jpg" width="506" height="506" alt="Home Office" />
+                    </a>
+                </div>
+
+                <div class="category-list category-right">
+                    <h3><a href="home-office.inc">Home Office <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a></h3>
+                    <ul>
+                        <li><a href="#"><span>Desks</span></a></li>
+                        <li><a href="#"><span>Chairs</span></a></li>
+                        <li><a href="#"><span>Tables</span></a></li>
+                        <li><a href="#"><span>File Cabinets</span></a></li>
+                        <li><a href="#"><span>Bookcases</span></a></li>
+                    </ul>
+                    <div>
+                        <p>furniture</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-tile tile-half-right">
+                <a href="/entertainment.inc"><span class="hidden">Entertainment</span></a>
+                <div class="category-image">
+                    <a href="/entertainment.inc" title="Shop Entertainment">
+                        <img src="images/tile-entertainment.jpg" width="506" height="506" alt="Entertainment" />
+                    </a>
+                </div>
+
+                <div class="category-list category-right">
+                    <h3><a href="/entertainment.inc">Entertainment <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a></h3>
+                    <ul>
+                        <li><a href="#"><span>Entertainment Centers</span></a></li>
+                        <li><a href="#"><span>TV Stands</span></a></li>
+                        <li><a href="#"><span>A/V Cabinets</span></a></li>
+                        <li><a href="#"><span>Media Cabinets</span></a></li>
+                        <li><a href="#"><span>Home Theater Seating</span></a></li>
+                    </ul>
+                    <div>
+                        <p>furniture</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-tile tile-half-left">
+                <a href="/accessories.inc"><span class="hidden">Accessories</span></a>
+                <div class="category-list">
+                    <h3><a href="/accessories.inc">Accessories <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></a></h3>
+                    <ul>
+                        <li><a href="#"><span>Accent Chairs</span></a></li>
+                        <li><a href="#"><span>Accent Tables</span></a></li>
+                        <li><a href="#"><span>Lamps</span></a></li>
+                        <li><a href="#"><span>Mirrors</span></a></li>
+                        <li><a href="#"><span>Clocks</span></a></li>
+                        <li><a href="#"><span>Wall Art</span></a></li>
+                        <li><a href="#"><span>Accent Pieces</span></a></li>
+                        <li><a href="#"><span>Fireplaces</span></a></li>
+                    </ul>
+                    <div>
+                        <p>&amp; decor</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="category-image">
+                    <a href="/accessories.inc" title="Shop Accessories">
+                        <img src="images/tile-accessories.jpg" width="506" height="506" alt="Accessories" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-tile tile-half-left mattress-tile">
+                <a href="/mattresses/"><span class="hidden">Mattresses</span></a>
+                <div class="category-list">
+                    <h3>Mattresses <i class="fa fa-angle-right fa-lg" aria-hidden="true"></i></h3>
+                    <ul>
+                        <li><p>Use our mattress finder to easily discover the mattress of your dreams.</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i></li>
+                    </ul>
+                    <div>
+                        <p>&amp; bedding</p><br /><i class="fa fa-angle-right fa-4x big-icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="category-image">
+                    <a href="/mattresses/" title="Shop Mattresses">
+                        <img src="images/tile-mattresses.jpg" width="506" height="506" alt="Mattresses" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="home-brands">
+            <div class="home-title">
+                <h2>Featured Brands</h2>
+            </div>
+            <div class="brands-container">
+                <ul class="" id="HomeBrand">
+                    <li><a href="javascript:void(0)"><img src="images/ashley-logo.png" alt="Ashley" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/bassett-logo.png" alt="Bassett" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/bdi-logo.png" alt="BDI" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/beautyrest-logo.png" alt="Beautyrest" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/feizy-logo.png" alt="Feizy" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/hooker-logo.png" alt="Hooker" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/lazboy-logo.png" alt="La-Z-Boy" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/sligh-logo.png" alt="Sligh" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/stressless-logo.png" alt="Stressless" width="120" height="90"></a></li>
+                    <li><a href="javascript:void(0)"><img src="images/tempur-logo.png" alt="Tempur-Pedic" width="120" height="90"></a></li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section id="bottom-promo-tiles">
+            <div class="category-tile tile-full-right promo-tile">
+                <a href="/about-us.inc"><span class="hidden">About Us</span></a>
+
+                <div class="category-image">
+                    <a href="/about-us.inc" title="About Us">
+                        <img src="images/tile-promo-bottom.jpg" style="object-position:left" width="725" height="400" alt="METADATA COMPANY" />
+                    </a>
+                </div>
+
+                <div class="promo-content">
+                    <h3>Trendy &amp; Functional Furniture that won't break the bank</h3>
+                    <p>At METADATA COMPANY in METADATA CITY, METADATA STATE, we offer a full line of sheek, modern home furnishings that feel as good as they look. Stop by our showroom today and see for yourself how form, function, and affordability go hand in hand at METADATA COMPANY.</p>
+                    <div class="button">
+                        <a href="/about-us.inc">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
 <!--  End Homepage  -->
 
 <!-- <include src="includes/footer.inc">Loading...</include> -->
 
 <!--  Footer  -->
+<footer>
+    <div class="grid-container">
+        <div class="flex-footer">
+            <div>
+                <div class="footer-social">
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i><span class="hidden">Facebook</span></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i><span class="hidden">Instagram</span></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i><span class="hidden">Twitter</span></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-pinterest fa-2x" aria-hidden="true"></i><span class="hidden">Pinterest</span></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i><span class="hidden">YouTube</span></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-rss fa-2x" aria-hidden="true"></i><span class="hidden">Blog</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-signup">
+                    <submitform id="email-signup" formname="Email Sign Up" inputnameprefix="EmailSignup_" message="Thank you for signing up."></submitform>
+                    <label class="hidden" for="email-signup-address">Email Address</label>
+                    <input  type="text" id="email-signup-address" name="EmailSignup_EmailAddress" placeholder="ENTER YOUR EMAIL" value="" tabindex="3" />
+                    <button data-button-type="submitform" id="ReCaptchaJoinEmail" class="g-recaptcha" name="EmailSignup_submit" tabindex="4"><i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i><span class="hidden">Submit</span></button>
+                </div>
+            </div>
 
+            <div class="footer-column">
+                <p>METADATA COMPANY</p>
+                <a href="/contact-us.inc">
+                    <p>11301 Carmel Commons Blvd.<br />
+                    Charlotte, NC 28226</p>
+                </a>
+                <br />
+                <a href="/contact-us.inc">
+                    <p>888-888-8888</p>
+                </a>
+                <div class="footer-icons">
+                    <ul>
+                        <li><a href="https://www.google.com/maps/" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i>find us</a></li>
+                        <li><a href="tel:+1-888-888-8888"><i class="fa fa-phone" aria-hidden="true"></i>call us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <p>Quick Links</p>
+                <ul>
+                    <li><a href="/displayflyer.aspx">Current Promotions</a></li>
+                    <li><a href="/design-center.inc">Design Center</a></li>
+                    <li><a href="/room-planner.inc">Room Planner</a></li>
+                    <li><a href="/brands.inc">Our Brands</a></li>
+                    <li><a href="/about-us.inc">About Us</a></li>
+                    <li><a href="/contact-us.inc">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="footer-copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> METADATA COMPANY. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 <!--  End Footer  -->
 
 </body>

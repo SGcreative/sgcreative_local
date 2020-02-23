@@ -60,7 +60,10 @@ input:not([type="radio"]):not([type="checkbox"]) {
 
 img {
     border: 0;
-    max-width: 100%;
+}
+
+main img {
+    width: 100%;
     height: auto;
 }
 

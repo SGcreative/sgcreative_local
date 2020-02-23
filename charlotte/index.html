@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="robots" content="noindex,nofollow">
     <title>Charlotte Theme</title>
     <script src="../packages/jquery-3.3.1.min.js"></script>
 	<script src="../packages/owl.carousel.min.js"></script>
 	<script src="../packages/jquery.magnific-popup.min.js"></script>
-	<script src="charlotte.js"></script>
+	<script defer src="charlotte.js"></script>
     <link rel="stylesheet" href="../packages/unsematnic-grid.css" />
     <link rel="stylesheet" href="../packages/owl.carousel.min.css">
 	<link rel="stylesheet" href="../packages/owl.theme.default.min.css">
@@ -190,10 +191,10 @@
 				<div class="clear"></div>
 			</nav>
 			<div id="search-bar">
-				<label class="hidden" for="SearchValue">Search Keyword</label>
-				<input type="text" name="Search_Value" placeholder="Search.." value="" />
-				<label class="hidden" for="searchbutton">Search</label>
-				<input name="Search_Button" type="Submit" value="Go" />
+				<label class="hidden" for="search-value">Search Keyword</label>
+				<input id="search-value" type="text" name="Search_Value" placeholder="Search.." value="" />
+				<label class="hidden" for="search-button">Search</label>
+				<input id="search-button" name="Search_Button" type="Submit" value="Go" />
 				<div id="search-close">
 					<a href="javascript:void(0)" class="opensearch"><i class="fa fa-times" aria-hidden="true"></i><span class="hidden">Close Search</span></a>
 				</div>
@@ -263,38 +264,38 @@
 <!--  End Header -->
 
 <!--  Homepage  -->
-<div id="home-slides">
-	<div class="owl-carousel owl-theme">
-		<img src="images/slideshow/homeslide-1_1920x950.webp" width="1920" height="950" alt="Furniture" />
-		<img src="images/slideshow/homeslide-2_1920x950.webp" width="1920" height="950" alt="Furniture" />
-		<img src="images/slideshow/homeslide-3_1920x950.webp" width="1920" height="950" alt="Furniture" />
-	</div>
-	<div id="scroll-down">
-        <a href="javascript:void(0);"><span class="hidden">Scroll Down</span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-    </div>
-</div>
-
-<script>
-	$('#home-slides .owl-carousel').owlCarousel({
-		autoplay: true,
-	    loop: true,
-	    dots: true,
-	    items: 1
-	    // responsive:{
-	    //     0:{
-	    //         items:1
-	    //     },
-	    //     600:{
-	    //         items:3
-	    //     },
-	    //     1000:{
-	    //         items:5
-	    //     }
-	    // }
-	});
-</script>
-
 <main>
+
+	<div id="home-slides">
+		<div class="owl-carousel owl-theme">
+			<img src="images/slideshow/homeslide-1_1920x950.webp" width="1920" height="950" alt="Furniture" />
+			<img src="images/slideshow/homeslide-2_1920x950.webp" width="1920" height="950" alt="Furniture" />
+			<img src="images/slideshow/homeslide-3_1920x950.webp" width="1920" height="950" alt="Furniture" />
+		</div>
+		<div id="scroll-down">
+	        <a href="javascript:void(0);"><span class="hidden">Scroll Down</span><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+	    </div>
+	</div>
+
+	<script>
+		$('#home-slides .owl-carousel').owlCarousel({
+			autoplay: true,
+		    loop: true,
+		    dots: true,
+		    items: 1
+		    // responsive:{
+		    //     0:{
+		    //         items:1
+		    //     },
+		    //     600:{
+		    //         items:3
+		    //     },
+		    //     1000:{
+		    //         items:5
+		    //     }
+		    // }
+		});
+	</script>
 
 	<h1 class="hidden">Charlotte Theme</h1>
 
@@ -575,10 +576,12 @@
 			<div class="grid-100 tablet-grid-80 tablet-prefix-10 grid-parent">
 				<div id="about-us">
 					<div class="grid-50">
-						<video controls autoplay="true" muted="true" width="680">
-						    <source src="media/sample-video.mp4" type="video/mp4">
-						    Sorry, your browser doesn't support embedded videos.
-						</video>
+						<div id="video">
+							<video controls autoplay="true" muted="true" width="680">
+							    <source src="media/sample-video.mp4" type="video/mp4">
+							    Sorry, your browser doesn't support embedded videos.
+							</video>
+						</div>
 						<!-- <div id="video">
 				            <iframe width="500" height="280" src="https://www.youtube.com/embed/iR2M37Zih2c?rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 				        </div> -->

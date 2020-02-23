@@ -315,7 +315,9 @@ $(document).ready(function() {
             $('.dropdown-open').removeClass('dropdown-open');
             $(this).parent('li').addClass('dropdown-open');
             if ($(this).hasClass('search-toggle')) {
-                $('#search-bar input[type="text"]').focus();
+                setTimeout(function() {
+                    $('#search-bar input[type="text"]').focus();
+                }, 100);
             }
         }
     });
