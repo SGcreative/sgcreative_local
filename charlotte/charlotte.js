@@ -10,6 +10,7 @@ $('include').each(function() {
 
 $(document).ready(function() {
 
+    // Demo Popup
     $('.ajax-popup').magnificPopup({
         type: 'ajax',
         callbacks: {
@@ -23,9 +24,6 @@ $(document).ready(function() {
             }
         }
     });
-
-    // Duplicate Cart Quantity --
-    // $('.cart-qty').text($('.cartSummary_Quantity').text());
 
     // FIXED HEADER NAVIGATION --
     function fixedHeader() {

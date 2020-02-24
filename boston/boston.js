@@ -328,4 +328,19 @@ $(document).ready(function() {
         });
     }
 
+    // Demo Popup
+    $('.ajax-popup').magnificPopup({
+        type: 'ajax',
+        callbacks: {
+            open: function() {
+                setTimeout(function() {
+                    $('.progress-bar span').addClass('active');
+                }, 100);
+                setTimeout(function() {
+                    $('.ajax-popup').magnificPopup('close');
+                }, 4000);
+            }
+        }
+    });
+
 });

@@ -1166,6 +1166,8 @@ footer a:hover {
     height: 60px;
     z-index: 99999;
     background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-left: none;
     border-radius: 0 2px 2px 0;
     cursor: default;
     -webkit-transition: all .3s ease;
@@ -1208,4 +1210,4 @@ footer a:hover {
     padding-bottom: 6px;
     border-bottom: 3px solid #22496e;
 }
-/*** END Portfolio Menu
+/*** END Portfolio Menu ***/
