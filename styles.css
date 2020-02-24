@@ -46,29 +46,6 @@ span.no-wrap {
 	margin: 0 auto;
 }
 
-/*a.button {
-	display: inline-block;
-	box-sizing: border-box;
-	padding: 12px 18px;
-	text-decoration: none;
-	text-transform: uppercase;
-	border-radius: 2px;
-	color: #22496e;
-    background-color: #e7ebee;
-    border-left: 5px solid;
-	-webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
-}*/
-
-/*a.button:hover {
-	color: #2d6eac;
-	background-color: #f1f4f6;
-	border-color: #2d6eac;
-}*/
-
 .hero {
     position: relative;
     width: 100%;
@@ -183,6 +160,11 @@ nav li a {
 	padding: 30px 0 12px;
 }
 
+#about a i {
+	padding-left: 12px;
+    font-size: 1.125em;
+}
+
 nav li a span,
 #about a span {
 	display: block;
@@ -250,7 +232,6 @@ main h1 {
 main h1 span {
 	position: relative;
 	padding-bottom: 10px;
-	/*border-bottom: 3px solid #22496e;*/
 }
 
 main h1 span::after {
@@ -289,75 +270,18 @@ main h1 span::after {
 	text-align: center;
 }
 
-/*#about a {
-	position: relative;
-	overflow: hidden;
-	margin-top: 25px;
-	padding-right: 16px;
-}
-
-#about a {
-	display: inline-block;
-	box-sizing: border-box;
-	padding: 12px 18px;
-	text-decoration: none;
-	text-transform: uppercase;
-	border-radius: 2px;
-	color: #22496e;
-    background-color: #e7ebee;
-    border-left: 5px solid;
-	-webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease;
-}*/
-
-#about a i {
-	padding-left: 12px;
-    font-size: 1.125em;
-}
-
-/*#about a span {*/
-	/*content: "Resume \f1c1";
-	font-family: "Font Awesome 5 Pro";*/
-/*	position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 0;
-    overflow: hidden;
-    color: #fff;
-    background-color: #22496e;
-    width: 0;
-    -webkit-transition: width .75s ease-out;
-    -moz-transition: width .75s ease-out;
-    -o-transition: width .75s ease-out;
-    -ms-transition: width .75s ease-out;
-    transition: width .75s ease-out;
-}
-
-#about a:hover::before {
-	width: 100%;
-}
-*/
 .percent-bars {
 	margin-bottom: 25px;
 }
 
 .percent-bars div {
 	background-color: #e7ebee;
-	/*box-shadow: 0 0 5px 0 rgba(0,0,0,.1)*/
 	border-radius: 2px;
 }
 
 .percent-bars p {
 	color: #fff;
 }
-
-/*.percent-bars div p span:first-child {
-	background-color: #bbb;
-}*/
 
 .percent-bars div p {
 	box-sizing: border-box;
@@ -425,17 +349,6 @@ main h1 span::after {
 	text-align: center;
 }
 
-/*#portfolio .container>div {
-	padding: 30px;
-	margin-bottom: 35px;
-	text-align: center;
-	background-color: #f1f4f6;
-}
-
-#portfolio .container>div:first-of-type {
-	margin-top: 20px;
-}*/
-
 #portfolio .container>div>p {
 	margin: 10px 20% 20px;
 }
@@ -447,41 +360,10 @@ main h1 span::after {
 	list-style: none;
 }
 
-/*#portfolio li {
-	display: block;*/
-	/*text-align: center;*/
-	/*background-color: #fff;*/
-    /*box-shadow: 0 0 7px 0 rgba(0,0,0,.05);*/
-    /*border-radius: 2px;
-    overflow: hidden;*/
-/*}*/
-
 #portfolio li a {
-	/*display: block;
-	position: relative;*/
 	height: 100%;
 	text-decoration: none;
 }
-
-/*#portfolio li a>div {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: rgba(255,255,255,.7);
-	opacity: 0;
-}
-
-#portfolio li a:hover>div {
-	opacity: 1;
-}
-
-#portfolio li a div div {
-	position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 20px;
-}*/
 
 #portfolio li a div:first-child {
 	position: relative;
@@ -509,21 +391,9 @@ main h1 span::after {
 
 #portfolio img {
 	display: block;
-	/*position: relative;*/
 	width: 100%;
 	border-radius: 2px;
-	/*border-bottom: 1px solid #e5e5e5;*/
-	/*opacity: 1;
-	-webkit-transition: opacity .3s ease;
-    -moz-transition: opacity .3s ease;
-    -o-transition: opacity .3s ease;
-    -ms-transition: opacity .3s ease;
-    transition: opacity .3s ease;*/
 }
-
-/*#portfolio li a:hover img {
-	opacity: .7;
-}*/
 
 #portfolio li a div:last-child {
 	padding: 15px 0;
@@ -690,5 +560,9 @@ footer a:hover {
 
 	p {
 		font-size: .9rem;
+	}
+
+	#portfolio li a h3 {
+		padding: 0 5px;
 	}
 }

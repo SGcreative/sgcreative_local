@@ -1151,3 +1151,61 @@ footer a:hover {
         width: 35%;
     }
 }
+
+/*** Portfolio Menu ***/
+#portfolio-menu {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding: 2px;
+    top: 20vh;
+    left: -212px;
+    width: 260px;
+    height: 60px;
+    z-index: 99999;
+    background-color: #fff;
+    border-radius: 0 2px 2px 0;
+    cursor: default;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#portfolio-menu:hover {
+    left: 0;
+}
+
+#portfolio-menu a,
+#portfolio-menu span {
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    color: #2a2a2a;
+    font-family: 'Rubik', Arial, sans-serif;
+    font-weight: 500;
+}
+
+#portfolio-menu a {
+    padding: 20px;
+    text-decoration: none;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    transition: color .3s ease;
+}
+
+#portfolio-menu a:hover {
+    color: #2d6eac;
+}
+
+#portfolio-menu span {
+    transform: rotate(-90deg);
+    padding-bottom: 6px;
+    border-bottom: 3px solid #22496e;
+}
+/*** END Portfolio Menu
