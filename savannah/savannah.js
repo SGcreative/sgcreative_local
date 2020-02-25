@@ -8,6 +8,21 @@ $('include').each(function() {
     });
 });
 
+// Demo Popup
+$('.ajax-popup').magnificPopup({
+    type: 'ajax',
+    callbacks: {
+        open: function() {
+            setTimeout(function() {
+                $('.progress-bar span').addClass('active');
+            }, 100);
+            setTimeout(function() {
+                $('.ajax-popup').magnificPopup('close');
+            }, 4000);
+        }
+    }
+});
+
 // Sticky Header
 var scrollPosition = "";
 var newScrollPosition = "";
@@ -328,20 +343,5 @@ $(document).ready(function() {
             searchBox.slideToggle();
         });
     }
-
-    // Demo Popup
-    $('.ajax-popup').magnificPopup({
-        type: 'ajax',
-        callbacks: {
-            open: function() {
-                setTimeout(function() {
-                    $('.progress-bar span').addClass('active');
-                }, 100);
-                setTimeout(function() {
-                    $('.ajax-popup').magnificPopup('close');
-                }, 4000);
-            }
-        }
-    });
 
 });
