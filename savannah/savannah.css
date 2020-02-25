@@ -336,7 +336,8 @@ header a {
 	font-size: .85rem;
 }
 
-.sub-nav ul {
+.sub-nav ul,
+.sub-nav>div>div {
 	visibility: hidden;
 	position: absolute;
 	right: -180px;
@@ -354,6 +355,18 @@ header a {
 	padding: 0 10px;
 	line-height: 2;
     white-space: nowrap;
+}
+
+.sub-nav>div>div p {
+    margin-bottom: 5px;
+}
+
+.sub-nav>div>div .button {
+    margin-top: 10px;
+}
+
+.sub-nav>div>div a {
+    padding: 10px 0;
 }
 
 .sub-nav ul a i {
@@ -397,7 +410,8 @@ header a {
     transition-delay: 0s;
 }
 
-.sub-nav:hover ul {
+.sub-nav:hover ul,
+.sub-nav:hover>div>div {
     visibility: visible;
     right: 0;
     -webkit-transition-delay: 0s;

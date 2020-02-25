@@ -1,4 +1,4 @@
-body, html, h1, h2, h3, h4, h5, h6, p, ul {
+body, html, h1, h2, h3, h4, h5, h6, p, button, input, textarea, ul {
     margin: 0;
     padding: 0;
     color: #2a2a2a;
@@ -28,9 +28,16 @@ img {
     outline: none;
 }
 
-input:not([type="radio"]):not([type="checkbox"]) {
+input:not([type="radio"]):not([type="checkbox"]),
+button {
     -webkit-appearance: none;
     border-radius: 0;
+}
+
+button {
+	background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .hidden {
@@ -49,6 +56,7 @@ span.no-wrap {
 .hero {
     position: relative;
     width: 100%;
+    height: 100vh;
     overflow: hidden;
     background-color: #171717;
 }
@@ -117,7 +125,8 @@ span.no-wrap {
     transition: bottom .3s ease;
 }
 
-.hero a:hover i {
+.hero a:hover i,
+.hero a:focus i {
 	bottom: -30px;
 }
 
@@ -139,7 +148,7 @@ nav li {
 }
 
 nav li a,
-#about a {
+.button {
 	text-transform: uppercase;
     text-decoration: none;
     color: #2a2a2a;
@@ -155,18 +164,19 @@ nav li a {
     padding: 30px 25px 12px;
 }
 
-#about a {
+.button {
 	display: inline-block;
 	padding: 30px 0 12px;
+	font-size: 1rem;
 }
 
-#about a i {
+.button i {
 	padding-left: 12px;
     font-size: 1.125em;
 }
 
 nav li a span,
-#about a span {
+.button span {
 	display: block;
 	height: 3px;
 	width: 0%;
@@ -189,22 +199,27 @@ nav li a span {
     transition: all .8s ease;
 }
 
-#about a span {
+.button span {
 	background-color: #2d6eac;
 }
 
 nav li a:hover,
-#about a:hover {
+nav li a:focus,
+.button:hover,
+.button:focus {
 	color: #2d6eac;
 }
 
-nav li a:hover span {
+nav li a:hover span,
+nav li a:focus span {
 	background-color: #2d6eac;
 }
 
 nav li a:hover span,
+nav li a:focus span,
 nav li a.active span,
-#about a:hover span {
+.button:hover span,
+.button:focus span {
 	width: 100%;
 	-webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -345,7 +360,7 @@ main h1 span::after {
 }
 
 #portfolio .container>div {
-	padding: 40px 0 25px;
+	padding-top: 40px;
 	text-align: center;
 }
 
@@ -385,7 +400,8 @@ main h1 span::after {
     transition: opacity .3s ease;
 }
 
-#portfolio li a:hover div:first-child::after {
+#portfolio li a:hover div:first-child::after,
+#portfolio li a:focus div:first-child::after {
 	opacity: .35;
 }
 
@@ -413,6 +429,60 @@ main h1 span::after {
 	font-size: .9rem;
 }
 
+#portfolio .disclaimer {
+	display: block;
+	padding-top: 20px;
+	font-size: .8rem;
+	font-weight: 300;
+}
+
+#contact form {
+	width: 70%;
+	margin: 0 auto;
+}
+
+#contact form label {
+	font-weight: 300;
+}
+
+#contact form input,
+#contact form textarea {
+	box-sizing: border-box;
+	width: 100%;
+	background-color: #e7ebee;
+	border: 2px solid #e7ebee;
+	border-radius: 2px;
+	height: 34px;
+	padding: 10px;
+	font-size: 16px;
+	-webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#contact form input {
+	height: 36px;
+	margin: 5px 0 25px;
+}
+
+#contact form textarea {
+	height: 120px;
+	margin-top: 5px;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+	background-color: #f1f4f6;
+	border-color: #2d6eac;
+}
+
+#contact form div {
+	text-align: right;
+	padding-right: 10px;
+}
+
 footer {
 	padding: 10px 30px;
 	text-align: center;
@@ -436,7 +506,8 @@ footer a {
     transition: color .3s ease;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
 	color: #2d6eac;
 }
 
@@ -486,6 +557,10 @@ footer a:hover {
 	#portfolio ul {
 	    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	}
+
+	#contact form {
+		width: 80%;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -516,6 +591,10 @@ footer a:hover {
     #about a span {
     	display: none;
     }
+
+    #contact form {
+		width: 90%;
+	}
 }
 
 @media screen and (max-width: 460px) {
@@ -564,5 +643,9 @@ footer a:hover {
 
 	#portfolio li a h3 {
 		padding: 0 5px;
+	}
+
+	#contact form {
+		width: 100%;
 	}
 }
