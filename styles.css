@@ -449,6 +449,8 @@ main h1 span::after {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
 	background-color: #e7ebee;
 	border: 2px solid #e0e0e0;
 	border-radius: 2px;
@@ -468,6 +470,7 @@ main h1 span::after {
 
 #contact form textarea {
 	height: 120px;
+	min-height: 120px;
 	margin-top: 5px;
 }
 
@@ -480,6 +483,17 @@ main h1 span::after {
 #contact form div {
 	text-align: right;
 	padding-right: 10px;
+}
+
+#contact .g-recaptcha {
+	float: left;
+    margin-top: 10px;
+}
+
+#contact form div::after {
+	content: "";
+    display: block;
+    clear: both;
 }
 
 footer {
