@@ -481,7 +481,7 @@ screen and (max-height: 300px) {
 }
 
 .mfp-content .progress-bar {
-    display: block;
+    display: block !important;
     top: unset;
 }
 

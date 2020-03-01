@@ -621,6 +621,10 @@ nav li li li a:hover {
     border-bottom: solid 2px #222;
 }
 
+#browse-rooms .home-title {
+    margin-top: 45px;
+}
+
 .home-title h1 {
     display: inline-block;
     font-family: 'Song Myung', Times, serif;
@@ -1024,6 +1028,10 @@ footer a:hover {
 
     .home-title {
         margin-top: 55px;
+    }
+
+    #browse-rooms .home-title {
+        margin-top: 0;
     }
 
     .banner-btn {
