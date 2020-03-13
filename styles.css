@@ -148,7 +148,7 @@ nav {
 	transform: translateY(-100%);
 	z-index: 1;
     background-color: #fff;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #d8dde0;
     margin-bottom: -156px;
 }
 
@@ -161,7 +161,7 @@ nav li a,
 .button {
 	text-transform: uppercase;
     text-decoration: none;
-    color: #2a2a2a;
+    color: #22496e;
     -webkit-transition: color .3s ease;
     -o-transition: color .3s ease;
     transition: color .3s ease;
@@ -452,7 +452,7 @@ main h1 span::after {
 	min-width: 100%;
 	max-width: 100%;
 	background-color: #e7ebee;
-	border: 2px solid #e0e0e0;
+	border: 1px solid #d8dde0;
 	border-radius: 2px;
 	height: 34px;
 	padding: 10px;
@@ -499,7 +499,7 @@ main h1 span::after {
 footer {
 	padding: 10px 30px;
 	text-align: center;
-	border-top: 2px solid #e0e0e0;
+	border-top: 1px solid #d8dde0;
 	background-color: #f1f4f6;
 }
 
